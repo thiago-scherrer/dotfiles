@@ -15,16 +15,11 @@ set backspace=2
 
 filetype plugin indent on
 
-let NERDTreeShowHidden=1
-let NERDTreeIgnore=['\.git$', '\.DS_Store$']
-
-set showcmd " Show (partial) command in status line.
 set showmatch " Show matching brackets.
 set ignorecase " Do case insensitive matching
 set smartcase " Do smart case matching
 set incsearch " Incremental search
 set nohlsearch
-set hidden " Hide buffers when they are abandoned
 
 " Automatically wrap text that extends beyond the screen length.
 set wrap
@@ -51,8 +46,15 @@ set matchpairs+=<:>
 set list
 set listchars=tab:›\ ,trail:•,extends:#,nbsp:.
 
-" Set status line display
-set statusline=[%F]\ [POS=%l,%v][%p%%]\ %{FugitiveStatusline()}\ }
+set statusline=
+set statusline+=%#PmenuSel#
+set statusline+=%#LineNr#
+set statusline+=\ %f
+set statusline+=%=
+set statusline+=%#CursorColumn#
+set statusline+=\ %{FugitiveStatusline()}
+set statusline+=\ %p%%
+set statusline+=\ %l:%c
 
 autocmd VimEnter * NERDTree | wincmd p
 let NERDTreeAutoDeleteBuffer = 1
@@ -60,8 +62,8 @@ let g:NERDTreeDirArrowExpandable = '▸'
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
     \ quit | endif
 
-let NERDTreeIgnore=['\.git$', '*.swp']
-
+let NERDTreeShowHidden=1
+let NERDTreeIgnore=['\.git$', '\.swp']
 
 " Thanks @BMilliet \o/
 " Auto complete menu
@@ -98,4 +100,4 @@ endfun
 " Terraform
 let g:terraform_align=1
 let g:terraform_fmt_on_save=1
-let g:terraform_fold_sections=1
+let g:terraform_fold_sections=0
