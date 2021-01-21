@@ -52,7 +52,7 @@ set list
 set listchars=tab:›\ ,trail:•,extends:#,nbsp:.
 
 " Set status line display
-set statusline=[TYPE=%Y]\ [POS=%l,%v][%p%%]\ %{FugitiveStatusline()}\ }
+set statusline=[%F]\ [POS=%l,%v][%p%%]\ %{FugitiveStatusline()}\ }
 
 autocmd VimEnter * NERDTree | wincmd p
 let NERDTreeAutoDeleteBuffer = 1
