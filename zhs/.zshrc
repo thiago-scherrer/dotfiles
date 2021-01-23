@@ -97,3 +97,5 @@ EDITOR='vim'
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+alias updateall="sudo apt update && sudo apt dist-upgrade -y && sudo apt clean all"
