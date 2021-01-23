@@ -48,6 +48,7 @@ function vimSetup () {
   git clone https://tpope.io/vim/fugitive.git
   vim -u NONE -c "helptags fugitive/doc" -c q
 
+  git clone https://github.com/fatih/vim-go.git ~/.vim/pack/plugins/start/vim-go
 }
 
 function tfSetup(){
