@@ -19,6 +19,12 @@ set smartcase " Do smart case matching
 set incsearch " Incremental search
 set nohlsearch
 
+" Change how vim represents characters on the screen
+set encoding=utf-8
+
+" Set the encoding of files written
+set fileencoding=utf-8
+
 " Automatically wrap text that extends beyond the screen length.
 set wrap
 
@@ -44,6 +50,7 @@ set listchars=tab:›\ ,trail:•,extends:#,nbsp:.
 autocmd VimEnter * NERDTree | wincmd p
 
 " NERDTree
+let NERDTreeWinSize = 19
 let NERDTreeAutoDeleteBuffer = 1
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
     \ quit | endif
@@ -87,8 +94,9 @@ filetype plugin indent on
 set backspace=indent,eol,start
 let g:go_fmt_command = "goimports"
 let g:go_auto_type_info = 1
+autocmd Filetype go setlocal tabstop=4 shiftwidth=4 softtabstop=4
 " au filetype go inoremap <buffer> . .<C-x><C-o>
 
 " airline theme
+let g:airline_powerline_fonts = 1
 let g:airline_theme='base16_summerfruit'
-
