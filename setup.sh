@@ -49,6 +49,10 @@ function vimSetup () {
   vim -u NONE -c "helptags fugitive/doc" -c q
 
   git clone https://github.com/fatih/vim-go.git ~/.vim/pack/plugins/start/vim-go
+
+  git clone https://github.com/vim-airline/vim-airline-themes ~/.vim/pack/dist/start/vim-airline-themes
+
+  git clone https://github.com/vim-airline/vim-airline ~/.vim/pack/dist/start/vim-airline .
 }
 
 function tfSetup(){
