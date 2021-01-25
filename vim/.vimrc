@@ -2,6 +2,10 @@ set clipboard^=unnamed,unnamedplus
 set guioptions+=a
 
 syntax on
+highlight Pmenu ctermbg=Gray ctermfg=White
+highlight PmenuSel ctermbg=Black ctermfg=White
+highlight Pmenu guibg=gray10 guifg=LightSteelBlue4
+highlight PmenuSel guibg=gray10 guifg=LightSteelBlue1
 
 set path+=**
 set nocompatible
@@ -102,10 +106,8 @@ let g:airline_theme='base16_summerfruit'
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
-" unicode symbols
-let g:airline_symbols.notexists = ''
-" powerline symbols
 let g:airline_left_sep = ''
+let g:airline_symbols.notexists = ''
 let g:airline_left_alt_sep = ''
 let g:airline_right_sep = ''
 let g:airline_right_alt_sep = ''
