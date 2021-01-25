@@ -1,4 +1,3 @@
-autocmd VimEnter * NERDTree | wincmd p
 highlight Pmenu ctermbg=Gray ctermfg=White
 highlight Pmenu guibg=gray10 guifg=LightSteelBlue4
 highlight PmenuSel ctermbg=Black ctermfg=White
@@ -31,6 +30,7 @@ set wrap
 syntax on
 
 " NERDTree
+autocmd VimEnter * NERDTree | wincmd p
 let NERDTreeWinSize = 19
 let NERDTreeAutoDeleteBuffer = 1
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
