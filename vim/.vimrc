@@ -1,69 +1,43 @@
-set clipboard^=unnamed,unnamedplus
-set guioptions+=a
-
-syntax on
+autocmd VimEnter * NERDTree | wincmd p
 highlight Pmenu ctermbg=Gray ctermfg=White
-highlight PmenuSel ctermbg=Black ctermfg=White
 highlight Pmenu guibg=gray10 guifg=LightSteelBlue4
+highlight PmenuSel ctermbg=Black ctermfg=White
 highlight PmenuSel guibg=gray10 guifg=LightSteelBlue1
-
-set path+=**
-set nocompatible
-set wildmenu
-
-set number
-
-set tabstop=2
-set shiftwidth=2
 set backspace=2
-
-set showmatch " Show matching brackets.
-set ignorecase " Do case insensitive matching
-set smartcase " Do smart case matching
-set incsearch " Incremental search
-set nohlsearch
-
-" Change how vim represents characters on the screen
-set encoding=utf-8
-
-" Set the encoding of files written
-set fileencoding=utf-8
-
-" Automatically wrap text that extends beyond the screen length.
-set wrap
-
-set expandtab
-set noshiftround
-
-" Display 5 lines above/below the cursor when scrolling with a mouse.
-set scrolloff=5
-
-" Fixes common backspace problems
 set backspace=indent,eol,start
-
-" Speed up scrolling in Vim
-set ttyfast
-
-" Highlight matching pairs of brackets. Use the '%' character to jump between them.
-set matchpairs+=<:>
-
-" Display different types of white spaces.
+set clipboard^=unnamed,unnamedplus
+set encoding=utf-8
+set expandtab
+set fileencoding=utf-8
+set guioptions+=a
+set ignorecase " Do case insensitive matching
+set incsearch " Incremental search
 set list
 set listchars=tab:›\ ,trail:•,extends:#,nbsp:.
-
-autocmd VimEnter * NERDTree | wincmd p
+set matchpairs+=<:>
+set nocompatible
+set nohlsearch
+set noshiftround
+set number
+set path+=**
+set scrolloff=5
+set shiftwidth=2
+set showmatch " Show matching brackets.
+set smartcase " Do smart case matching
+set tabstop=2
+set ttyfast
+set wildmenu
+set wrap
+syntax on
 
 " NERDTree
 let NERDTreeWinSize = 19
 let NERDTreeAutoDeleteBuffer = 1
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
     \ quit | endif
-
 let NERDTreeShowHidden=1
 let NERDTreeIgnore=['\.git$', '\.swp']
 :nnoremap <C-g> :NERDTreeToggle<CR>
-
-" Minimalist-TabComplete-Plugin
 inoremap <expr> <Tab> TabComplete()
 fun! TabComplete()
     if getline('.')[col('.') - 2] =~ '\K' || pumvisible()
@@ -72,8 +46,6 @@ fun! TabComplete()
         return "\<Tab>"
     endif
 endfun
-
-" Minimalist-AutoCompletePop-Plugin
 set completeopt=menu,menuone,noinsert
 inoremap <expr> <CR> pumvisible() ? "\<C-Y>" : "\<CR>"
 autocmd InsertCharPre * call AutoComplete()
@@ -94,26 +66,37 @@ let g:terraform_fmt_on_save=1
 let g:terraform_fold_sections=0
 
 " Golang
-filetype plugin indent on
-set backspace=indent,eol,start
-let g:go_fmt_command = "goimports"
-let g:go_auto_type_info = 1
-autocmd Filetype go setlocal tabstop=4 shiftwidth=4 softtabstop=4
 au filetype go inoremap <buffer> . .<C-x><C-o>
+autocmd Filetype go setlocal tabstop=4 shiftwidth=4 softtabstop=4
+filetype plugin indent on
+let g:go_addtags_transform = "camelcase"
+let g:go_auto_sameids = 0
+let g:go_auto_type_info = 1
+let g:go_fmt_command = "goimports"
+let g:go_highlight_build_constraints = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_types = 1
+let g:go_metalinter_autosave = 1
+let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
+set backspace=indent,eol,start
+set updatetime=100
 
 " airline theme
-let g:airline_theme='base16_summerfruit'
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
-let g:airline_left_sep = ''
-let g:airline_symbols.notexists = ''
 let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
+let g:airline_left_sep = ''
 let g:airline_right_alt_sep = ''
+let g:airline_right_sep = ''
 let g:airline_symbols.branch = ''
-let g:airline_symbols.readonly = ''
+let g:airline_symbols.dirty=''
 let g:airline_symbols.linenr = ''
 let g:airline_symbols.maxlinenr = ''
-let g:airline_symbols.dirty=''
-
+let g:airline_symbols.notexists = ''
+let g:airline_symbols.readonly = ''
+let g:airline_theme='base16_summerfruit'
