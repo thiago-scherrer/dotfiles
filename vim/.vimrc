@@ -95,7 +95,7 @@ set backspace=indent,eol,start
 let g:go_fmt_command = "goimports"
 let g:go_auto_type_info = 1
 autocmd Filetype go setlocal tabstop=4 shiftwidth=4 softtabstop=4
-" au filetype go inoremap <buffer> . .<C-x><C-o>
+au filetype go inoremap <buffer> . .<C-x><C-o>
 
 " airline theme
 let g:airline_theme='base16_summerfruit'
