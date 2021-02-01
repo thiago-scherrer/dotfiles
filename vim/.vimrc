@@ -30,7 +30,7 @@ set wrap
 syntax on
 
 " NERDTree
-autocmd VimEnter * NERDTree | wincmd p
+" autocmd VimEnter * NERDTree | wincmd p
 let NERDTreeWinSize = 19
 let NERDTreeAutoDeleteBuffer = 1
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
