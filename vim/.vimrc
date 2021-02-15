@@ -100,3 +100,11 @@ let g:airline_symbols.maxlinenr = ''
 let g:airline_symbols.notexists = ''
 let g:airline_symbols.readonly = ''
 let g:airline_theme='base16_summerfruit'
+
+" JS
+let g:javascript_plugin_jsdoc = 1
+
+" Ctags
+set statusline+=%{gutentags#statusline()}
+let g:gutentags_cache_dir='~/.ctags'
+nmap <F8> :TagbarToggle<CR>

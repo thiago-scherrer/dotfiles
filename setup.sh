@@ -5,25 +5,27 @@ function aptSetup() {
 	sudo apt update && \
 		apt full-upgrade -y \
 		apt install -y htop \
-			lm-sensors \
-			vim \
-			keepassxc \
-			ubuntu-restricted-extras \
-			git \
-			vlc* \
-			encfs \
-			gnome-shell-extension-autohidetopbar \ 
-			software-center \
 			build-essential \
-			libz-dev libpng-dev \
-			libsdl2-dev \
-			libfreetype-dev \
-			nasm \
+			encfs \
+      exuberant-ctags \
+			git \
+			gnome-shell-extension-autohidetopbar \
+			keepassxc \
+			libavcodec-extra \
+			libboost-all-dev \
 			libboost-dev \
 			libboost-filesystem-dev \
-			libboost-all-dev \
-			libavcodec-extra \
-      gimp
+			libfreetype-dev \
+			libsdl2-dev \
+			libz-dev libpng-dev \
+			lm-sensors \
+			nasm \
+			software-center \
+			ubuntu-restricted-extras \
+			vim \
+			vlc* \
+      gimp \
+      universal-ctags
 }
 
 function zshSetup () {
@@ -32,6 +34,8 @@ function zshSetup () {
 }
 
 function vimSetup () {
+  mkdir ~/.ctags
+
 	cp vim/.vimrc ~/.vimrc
 	
   git clone https://github.com/preservim/nerdtree.git ~/.vim/pack/vendor/start/nerdtree
@@ -53,6 +57,12 @@ function vimSetup () {
   git clone https://github.com/vim-airline/vim-airline-themes ~/.vim/pack/dist/start/vim-airline-themes
 
   git clone https://github.com/vim-airline/vim-airline ~/.vim/pack/dist/start/vim-airline
+
+  git clone https://github.com/pangloss/vim-javascript.git ~/.vim/pack/vim-javascript/start/vim-javascript
+
+  git clone https://github.com/ludovicchabant/vim-gutentags.git ~/.vim/pack/dist/start/vim-gutentags
+
+  git clone https://github.com/preservim/tagbar.git ~/.vim/pack/plugins/start/tagbar
 }
 
 function tfSetup(){
