@@ -5,29 +5,29 @@ function aptSetup() {
 	apt update \
 	&& apt full-upgrade -y \
 	&& apt install -y \
-			encfs \
-			git \
-			gnome-shell-extension-autohidetopbar \
-			keepassxc \
-			libavcodec-extra \
-			libboost-all-dev \
-			libboost-dev \
-			libboost-filesystem-dev \
-			libfreetype-dev \
-			libsdl2-dev \
-			libz-dev libpng-dev \
-			lm-sensors \
-			nasm \
-			ubuntu-restricted-extras \
-			vim \
-			vlc* \
-      build-essential \
-      curl \
-      exuberant-ctags \
-      gimp \
-      htop \
-      universal-ctags \
-	  zsh
+		encfs \
+		git \
+		gnome-shell-extension-autohidetopbar \
+		keepassxc \
+		libavcodec-extra \
+		libboost-all-dev \
+		libboost-dev \
+		libboost-filesystem-dev \
+		libfreetype-dev \
+		libsdl2-dev \
+		libz-dev libpng-dev \
+		lm-sensors \
+		nasm \
+		ubuntu-restricted-extras \
+		vim \
+		vlc* \
+		build-essential \
+		curl \
+		exuberant-ctags \
+		gimp \
+		htop \
+		universal-ctags \
+		zsh
 }
 
 function zshSetup () {
