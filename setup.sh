@@ -1,13 +1,11 @@
-!#/bin/bash
+#!/bin/bash
 
 function aptSetup() {
 
-	sudo apt update && \
-		apt full-upgrade -y \
-		apt install -y htop \
-			build-essential \
+	apt update \
+	&& apt full-upgrade -y \
+	&& apt install -y \
 			encfs \
-      exuberant-ctags \
 			git \
 			gnome-shell-extension-autohidetopbar \
 			keepassxc \
@@ -20,27 +18,38 @@ function aptSetup() {
 			libz-dev libpng-dev \
 			lm-sensors \
 			nasm \
-			software-center \
 			ubuntu-restricted-extras \
 			vim \
 			vlc* \
+      build-essential \
+      curl \
+      exuberant-ctags \
       gimp \
-      universal-ctags
+      htop \
+      universal-ctags \
+	  zsh
 }
 
 function zshSetup () {
 	sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 	cp zsh/.zshrc ~/
+
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git \
+    ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
+  git clone https://github.com/zsh-users/zsh-autosuggestions \
+    ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
 }
 
 function vimSetup () {
   mkdir ~/.ctags
 
 	cp vim/.vimrc ~/.vimrc
-	
+
   git clone https://github.com/preservim/nerdtree.git ~/.vim/pack/vendor/start/nerdtree
 	vim -u NONE -c "helptags ~/.vim/pack/vendor/start/nerdtree/doc" -c q
-	
+
   mkdir -p ~/.vim/pack/local/start
 	cd ~/.vim/pack/local/start
 	git clone https://github.com/editorconfig/editorconfig-vim.git

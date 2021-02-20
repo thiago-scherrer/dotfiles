@@ -17,7 +17,7 @@ set matchpairs+=<:>
 set nocompatible
 set nohlsearch
 set noshiftround
-set number
+"set number
 set path+=**
 set scrolloff=5
 set shiftwidth=2
