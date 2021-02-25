@@ -111,8 +111,8 @@ function i3Setup(){
 	cp -v $I3PKG/.Xresources ~/
 	cp -v $I3PKG/.xsettingsd ~/
 	cp -v $I3PKG/.urxvt ~/
-	cp -V $I3PKG/.fonts ~/
-	cp -V $I3PKG/.config/* ~/.config/
+	cp -r $I3PKG/.fonts ~/
+	cp -r -v $I3PKG/.config/* ~/.config/
 
 }
 
