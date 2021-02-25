@@ -102,7 +102,8 @@ function i3Setup(){
 		compton \
 		lxappearance \
 		lxappearance-obconf \
-		nitrogen
+		nitrogen \
+		pavucontrol
 
 	export I3PKG=/tmp/i3-pkg
 
