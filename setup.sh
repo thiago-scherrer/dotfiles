@@ -78,7 +78,46 @@ function tfSetup(){
   git clone https://github.com/tfutils/tfenv.git ~/.tfenv
 }
 
+function i3Setup(){
+	apt update \
+	&& apt install -y \
+		i3 \
+		i3-wm \
+		dunst \
+		i3lock \
+		i3status \
+		suckless-tools \
+		compton \
+		hsetroot \
+		rxvt-unicode \
+		xsel \
+		rofi \
+		fonts-noto \
+		fonts-mplus \
+		xsettingsd \
+		lxappearance \
+		scrot \
+		viewnior \
+		thunar \
+		compton \
+		lxappearance \
+		lxappearance-obconf \
+		nitrogen
+
+	export I3PKG=/tmp/i3-pkg
+
+	git clone https://github.com/addy-dclxvi/i3-starterpack.git $I3PKG
+
+	cp -v $I3PKG/.Xresources ~/
+	cp -v $I3PKG/.xsettingsd ~/
+	cp -v $I3PKG/.urxvt ~/
+	cp -V $I3PKG/.fonts ~/
+	cp -V $I3PKG/.config/* ~/.config/
+
+}
+
 aptSetup
 zshSetup
 vimSetup
 tfSetup
+i3Setup
