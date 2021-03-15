@@ -80,12 +80,12 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-
 export PATH=$PATH:/usr/local/go/bin:/home/$USER/.local/bin:$HOME/go/bin/:$HOME/.tfenv/bin
 
 #export TFENV_ARCH=arm
 
 # export MANPATH="/usr/local/man:$MANPATH"
+export GPG_TTY=$(tty)
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8

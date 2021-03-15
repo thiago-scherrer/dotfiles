@@ -72,6 +72,9 @@ function vimSetup () {
   git clone https://github.com/ludovicchabant/vim-gutentags.git ~/.vim/pack/dist/start/vim-gutentags
 
   git clone https://github.com/preservim/tagbar.git ~/.vim/pack/plugins/start/tagbar
+
+  git clone https://github.com/brooth/far.vim ~/.vim/pack/plugins/start/far
+
 }
 
 function tfSetup(){
@@ -102,7 +105,8 @@ function i3Setup(){
 		compton \
 		lxappearance \
 		lxappearance-obconf \
-		nitrogen
+		nitrogen \
+		pavucontrol
 
 	export I3PKG=/tmp/i3-pkg
 
@@ -111,8 +115,8 @@ function i3Setup(){
 	cp -v $I3PKG/.Xresources ~/
 	cp -v $I3PKG/.xsettingsd ~/
 	cp -v $I3PKG/.urxvt ~/
-	cp -V $I3PKG/.fonts ~/
-	cp -V $I3PKG/.config/* ~/.config/
+	cp -r $I3PKG/.fonts ~/
+	cp -r -v $I3PKG/.config/* ~/.config/
 
 }
 
