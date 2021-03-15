@@ -72,6 +72,9 @@ function vimSetup () {
   git clone https://github.com/ludovicchabant/vim-gutentags.git ~/.vim/pack/dist/start/vim-gutentags
 
   git clone https://github.com/preservim/tagbar.git ~/.vim/pack/plugins/start/tagbar
+
+  git clone https://github.com/brooth/far.vim ~/.vim/pack/plugins/start/far
+
 }
 
 function tfSetup(){
