@@ -2,13 +2,11 @@
 
 function aptSetup() {
 
-	apt update \
-	&& apt full-upgrade -y \
-	&& apt install -y \
+	sudo apt update \
+	&& sudo apt full-upgrade -y \
+	&& sudo apt install -y \
 		encfs \
 		git \
-		gnome-shell-extension-autohidetopbar \
-		keepassxc \
 		libavcodec-extra \
 		libboost-all-dev \
 		libboost-dev \
@@ -27,7 +25,9 @@ function aptSetup() {
 		gimp \
 		htop \
 		universal-ctags \
-		zsh
+		zsh \
+		ranger \
+	    vim-gtk
 }
 
 function zshSetup () {
@@ -82,8 +82,8 @@ function tfSetup(){
 }
 
 function i3Setup(){
-	apt update \
-	&& apt install -y \
+	sudo apt update \
+	&& sudo apt install -y \
 		i3 \
 		i3-wm \
 		dunst \
@@ -101,7 +101,6 @@ function i3Setup(){
 		lxappearance \
 		scrot \
 		viewnior \
-		thunar \
 		compton \
 		lxappearance \
 		lxappearance-obconf \
@@ -120,8 +119,8 @@ function i3Setup(){
 
 }
 
-aptSetup
+#aptSetup
 zshSetup
-vimSetup
-tfSetup
-i3Setup
+#vimSetup
+#tfSetup
+#i3Setup

@@ -83,6 +83,7 @@ source $ZSH/oh-my-zsh.sh
 export PATH=$PATH:/usr/local/go/bin:/home/$USER/.local/bin:$HOME/go/bin/:$HOME/.tfenv/bin
 export TFENV_ARCH=arm
 export GPG_TTY=$(tty)
+export VISUAL=/usr/bin/vim
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
