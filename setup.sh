@@ -119,8 +119,8 @@ function i3Setup(){
 
 }
 
-#aptSetup
+aptSetup
 zshSetup
-#vimSetup
-#tfSetup
-#i3Setup
+vimSetup
+tfSetup
+i3Setup
