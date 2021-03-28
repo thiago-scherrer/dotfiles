@@ -4,8 +4,7 @@ function aptSetup() {
 
 	sudo apt update \
 	&& sudo apt full-upgrade -y \
-	&& sudo apt install -y \
-		encfs \
+	&& sudo apt install \
 		git \
 		libavcodec-extra \
 		libboost-all-dev \
@@ -27,7 +26,17 @@ function aptSetup() {
 		universal-ctags \
 		zsh \
 		ranger \
-	    vim-gtk
+	    vim-gtk \
+		cura \
+	    terminator \
+		xfce4-screenshooter \
+		irssi \
+		zip \
+		unzip \
+		xclip \
+		x11-apps \
+		vim-gtk \
+		openvpn
 }
 
 function zshSetup () {
