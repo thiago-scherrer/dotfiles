@@ -1,0 +1,27 @@
+[core]
+	editor = vim
+[commit]
+	gpgsign = true
+[gpg]
+  program = gpg2
+[diff]
+  tool = vimdiff
+[merge]
+  tool = vimdiff
+  conflictstyle = diff3
+[mergetool]
+	prompt = false
+[web]
+	browser = open
+[difftool]
+  prompt = 0
+[alias]
+	st = status
+	co = checkout
+	br = branch
+	sb = branch -a
+	mt = mergetool
+	d = difftool
+	dst = diff --staged
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+
