@@ -86,6 +86,7 @@ export PATH=$PATH:/usr/local/go/bin:/home/$USER/.local/bin:$HOME/go/bin/:$HOME/.
 
 # export MANPATH="/usr/local/man:$MANPATH"
 export GPG_TTY=$(tty)
+export VISUAL=/usr/bin/vim
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
