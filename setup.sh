@@ -52,42 +52,11 @@ function zshSetup () {
 }
 
 function vimSetup () {
-  mkdir ~/.ctags
-
 	cp vim/.vimrc ~/.vimrc
-
-  git clone https://github.com/preservim/nerdtree.git ~/.vim/pack/vendor/start/nerdtree
-	vim -u NONE -c "helptags ~/.vim/pack/vendor/start/nerdtree/doc" -c q
-
-  mkdir -p ~/.vim/pack/local/start
-	cd ~/.vim/pack/local/start
-	git clone https://github.com/editorconfig/editorconfig-vim.git
-
-  git clone https://github.com/hashivim/vim-terraform.git ~/.vim/pack/plugins/start/vim-terraform
-
-  mkdir -p ~/.vim/pack/tpope/start
-  cd ~/.vim/pack/tpope/start
-  git clone https://tpope.io/vim/fugitive.git
-  vim -u NONE -c "helptags fugitive/doc" -c q
-
-  git clone https://github.com/fatih/vim-go.git ~/.vim/pack/plugins/start/vim-go
-
-  git clone https://github.com/vim-airline/vim-airline-themes ~/.vim/pack/dist/start/vim-airline-themes
-
-  git clone https://github.com/vim-airline/vim-airline ~/.vim/pack/dist/start/vim-airline
-
-  git clone https://github.com/pangloss/vim-javascript.git ~/.vim/pack/vim-javascript/start/vim-javascript
-
-  git clone https://github.com/ludovicchabant/vim-gutentags.git ~/.vim/pack/dist/start/vim-gutentags
-
-  git clone https://github.com/preservim/tagbar.git ~/.vim/pack/plugins/start/tagbar
-
-  git clone https://github.com/brooth/far.vim ~/.vim/pack/plugins/start/far
-
 }
 
 function tfSetup(){
-  git clone https://github.com/tfutils/tfenv.git ~/.tfenv
+	git clone https://github.com/tfutils/tfenv.git ~/.tfenv
 }
 
 function i3Setup(){

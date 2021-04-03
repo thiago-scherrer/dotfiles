@@ -109,3 +109,15 @@ EDITOR='vim'
 alias ctags="ctags --recurse=yes --exclude=.git --exclude=.terraform --exclude=.svn --exclude=vendor --exclude=node_modules --exclude=\*.swp --exclude=\*.cache"
 
 alias updateall="sudo apt update && sudo apt dist-upgrade -y && sudo apt autoremove -y && sudo apt clean all"
+
+lg()
+{
+    export LAZYGIT_NEW_DIR_FILE=~/.lazygit/newdir
+
+    lazygit "$@"
+
+    if [ -f $LAZYGIT_NEW_DIR_FILE ]; then
+            cd "$(cat $LAZYGIT_NEW_DIR_FILE)"
+            rm -f $LAZYGIT_NEW_DIR_FILE > /dev/null
+    fi
+}
