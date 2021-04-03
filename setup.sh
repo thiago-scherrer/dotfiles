@@ -36,7 +36,11 @@ function aptSetup() {
 		xclip \
 		x11-apps \
 		vim-gtk \
-		openvpn
+		openvpn \
+		nodejs \
+		npm
+
+	npm install --global yar
 }
 
 function zshSetup () {
