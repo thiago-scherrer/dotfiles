@@ -34,7 +34,6 @@ Plug 'Raimondi/delimitMate'
 Plug 'Yggdroot/indentLine'
 Plug 'airblade/vim-gitgutter'
 Plug 'brooth/far.vim'
-Plug 'dense-analysis/ale'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'editor-bootstrap/vim-bootstrap-updater'
 Plug 'editorconfig/editorconfig-vim'
@@ -218,7 +217,6 @@ endif
 " vim-airline
 let g:airline_theme = 'powerlineish'
 let g:airline#extensions#branch#enabled = 1
-let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tagbar#enabled = 1
 let g:airline_skip_empty_sections = 1
@@ -391,9 +389,6 @@ let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 let g:UltiSnipsEditSplit="vertical"
 
-" ale
-let g:ale_linters = {}
-
 " Tagbar
 nmap <silent> <F4> :TagbarToggle<CR>
 let g:tagbar_autofocus = 1
@@ -469,14 +464,10 @@ let g:go_highlight_function_calls = 1
 let g:go_highlight_functions = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_types = 1
-let g:go_metalinter_autosave = 1
-let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
+" let g:go_metalinter_autosave = 1
+" let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
 set backspace=indent,eol,start
 set updatetime=100
-
-" ale
-:call extend(g:ale_linters, {
-    \"go": ['golint', 'go vet'], })
 
 "*****************************************************************************
 "*****************************************************************************
@@ -530,7 +521,6 @@ endif
 let g:terraform_align=1
 let g:terraform_fmt_on_save=1
 let g:terraform_fold_sections=0
-
 
 " MarkdownPreview
 let g:mkdp_auto_start = 0
