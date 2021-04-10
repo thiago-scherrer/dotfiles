@@ -8,7 +8,6 @@ https://github.com/brooth/far.vim
 https://github.com/dracula/vim
 https://github.com/editor-bootstrap/vim-bootstrap-updater
 https://github.com/editorconfig/editorconfig-vim
-https://github.com/fatih/vim-go
 https://github.com/hashivim/vim-terraform
 https://github.com/honza/vim-snippets
 https://github.com/iamcco/markdown-preview.nvim

@@ -16,11 +16,6 @@ jobs:
       with:
         ref: ${{ github.ref }}
 
-    - name: Check out
-      run: |
-
-        ls -hlaR
-
     - name: Run scam
       run: |
 
