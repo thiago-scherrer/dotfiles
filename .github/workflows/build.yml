@@ -15,7 +15,7 @@ jobs:
     - name: Check out
       run: |
 
-        git checkout
+        ls -hlaR
 
     - name: Run scam
       run: |
