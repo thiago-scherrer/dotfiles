@@ -38,9 +38,10 @@ Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'editor-bootstrap/vim-bootstrap-updater'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'hashivim/vim-terraform'
-Plug 'hashivim/vim-terraform'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'majutsushi/tagbar'
+Plug 'mbbill/undotree'
 Plug 'pangloss/vim-javascript'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-commentary'
@@ -50,7 +51,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/CSApprox'
 Plug 'vim-scripts/grep.vim'
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 
 if isdirectory('/usr/local/opt/fzf')
   Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
@@ -169,7 +169,7 @@ else
   let g:indentLine_char = '┆'
   let g:indentLine_faster = 1
 
-  
+
   if $COLORTERM == 'gnome-terminal'
     set term=gnome-256color
   else
@@ -177,7 +177,7 @@ else
       set term=xterm-256color
     endif
   endif
-  
+
 endif
 
 
