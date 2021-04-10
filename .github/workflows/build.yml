@@ -1,0 +1,24 @@
+name: ci
+
+on:
+  push:
+    branches: main
+
+jobs:
+  build:
+    name: Run build
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - name: Check out
+      run: |
+
+        git checkout
+
+    - name: Run scam
+      run: |
+
+        bash salus.sh
+
