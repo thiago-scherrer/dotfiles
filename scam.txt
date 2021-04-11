@@ -14,6 +14,7 @@ https://github.com/iamcco/markdown-preview.nvim
 https://github.com/jistr/vim-nerdtree-tabs
 https://github.com/majutsushi/tagbar
 https://github.com/mbbill/undotree
+https://github.com/neoclide/coc.nvim
 https://github.com/pangloss/vim-javascript
 https://github.com/scrooloose/nerdtree
 https://github.com/tfutils/tfenv.git
