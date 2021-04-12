@@ -38,7 +38,9 @@ function aptSetup() {
 		vim-gtk \
 		openvpn \
 		nodejs \
-		npm
+		npm \
+		libncurses5-dev \
+		libncursesw5-dev
 
 	npm install --global yar
 }
