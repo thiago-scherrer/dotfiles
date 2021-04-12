@@ -1,6 +1,5 @@
 https://github.com/Raimondi/delimitMate
 https://github.com/Shougo/vimproc.vim
-https://github.com/SirVer/ultisnips
 https://github.com/Yggdroot/indentLine
 https://github.com/addy-dclxvi/i3-starterpack.git
 https://github.com/airblade/vim-gitgutter
@@ -9,7 +8,6 @@ https://github.com/dracula/vim
 https://github.com/editor-bootstrap/vim-bootstrap-updater
 https://github.com/editorconfig/editorconfig-vim
 https://github.com/hashivim/vim-terraform
-https://github.com/honza/vim-snippets
 https://github.com/iamcco/markdown-preview.nvim
 https://github.com/jistr/vim-nerdtree-tabs
 https://github.com/majutsushi/tagbar
