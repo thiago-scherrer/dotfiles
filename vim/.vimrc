@@ -42,7 +42,6 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'majutsushi/tagbar'
 Plug 'mbbill/undotree'
-Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
 Plug 'pangloss/vim-javascript'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-commentary'
@@ -51,6 +50,7 @@ Plug 'tpope/vim-rhubarb' " required by fugitive to :Gbrowse
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/CSApprox'
+Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
 
 let g:make = 'gmake'
 if exists('make')
@@ -61,10 +61,6 @@ Plug 'Shougo/vimproc.vim', {'do': g:make}
 "" Vim-Session
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-session'
-
-"" Snippets
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
 
 "*****************************************************************************
 "" Custom bundles
@@ -163,7 +159,7 @@ else
   let g:indentLine_char = '┆'
   let g:indentLine_faster = 1
 
-
+  
   if $COLORTERM == 'gnome-terminal'
     set term=gnome-256color
   else
@@ -171,7 +167,7 @@ else
       set term=xterm-256color
     endif
   endif
-
+  
 endif
 
 
@@ -348,12 +344,6 @@ noremap <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 
 "" Opens a tab edit command with the path of the currently edited file filled
 noremap <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
-
-" snippets
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<c-b>"
-let g:UltiSnipsEditSplit="vertical"
 
 " Tagbar
 nmap <silent> <F4> :TagbarToggle<CR>
