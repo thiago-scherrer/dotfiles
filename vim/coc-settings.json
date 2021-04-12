@@ -10,7 +10,12 @@
     "json",
     "css",
     "scss",
-    "go"
+    "go",
+    "sh",
+    "yaml",
+    "sql",
+    "pyright",
+    "markdownlint"
   ],
   "coc.preferences.hoverTarget": "float",
   "languageserver": {
