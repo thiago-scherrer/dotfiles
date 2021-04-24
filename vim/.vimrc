@@ -74,11 +74,6 @@ Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
 "*****************************************************************************
 "*****************************************************************************
 
-"" Include user's extra bundle
-if filereadable(expand("~/.vimrc.local.bundles"))
-  source ~/.vimrc.local.bundles
-endif
-
 call plug#end()
 
 " Required:
@@ -115,13 +110,9 @@ set incsearch
 set ignorecase
 set smartcase
 
-set fileformats=unix,dos,mac
+set fileformats=unix
 
-if exists('$SHELL')
-    set shell=$SHELL
-else
-    set shell=/bin/sh
-endif
+set shell=$SHELL
 
 " session management
 let g:session_directory = "~/.vim/session"
@@ -145,42 +136,19 @@ set t_Co=256
 set guioptions=egmrti
 set gfn=Monospace\ 10
 
-if has("gui_running")
-  if has("gui_mac") || has("gui_macvim")
-    set guifont=Menlo:h12
-    set transparency=7
-  endif
-else
-  let g:CSApprox_loaded = 1
-
-  " IndentLine
-  let g:indentLine_enabled = 1
-  let g:indentLine_concealcursor = 0
-  let g:indentLine_char = '┆'
-  let g:indentLine_faster = 1
-
-  
-  if $COLORTERM == 'gnome-terminal'
-    set term=gnome-256color
-  else
-    if $TERM == 'xterm'
-      set term=xterm-256color
-    endif
-  endif
-  
-endif
-
-
-if &term =~ '256color'
-  set t_ut=
-endif
-
+let g:CSApprox_loaded = 1
+" IndentLine
+let g:indentLine_enabled = 1
+let g:indentLine_concealcursor = 0
+let g:indentLine_char = '┆'
+let g:indentLine_faster = 1
+set term=xterm-256color
+set t_ut=
 
 "" Disable the blinking cursor.
 set gcr=a:blinkon0
 
 set scrolloff=3
-
 
 "" Status bar
 set laststatus=2
@@ -199,10 +167,7 @@ set statusline=%F%m%r%h%w%=(%{&ff}/%Y)\ (line\ %l\/%L,\ col\ %c)\
 " search will center on the line it's found in.
 nnoremap n nzzzv
 nnoremap N Nzzzv
-
-if exists("*fugitive#statusline")
-  set statusline+=%{fugitive#statusline()}
-endif
+set statusline+=%{fugitive#statusline()}
 
 " vim-airline
 let g:airline_theme = 'powerlineish'
@@ -258,7 +223,6 @@ endfun
 
 " terminal emulation
 nnoremap <silent> <leader>sh :terminal<CR>
-
 
 "*****************************************************************************
 "" Commands
@@ -364,12 +328,6 @@ noremap YY "+y<CR>
 noremap <leader>p "+gP<CR>
 noremap XX "+x<CR>
 
-if has('macunix')
-  " pbcopy for OSX copy/paste
-  vmap <C-x> :!pbcopy<CR>
-  vmap <C-c> :w !pbcopy<CR><CR>
-endif
-
 "" Buffer nav
 noremap <leader>z :bp<CR>
 noremap <leader>q :bp<CR>
@@ -424,14 +382,6 @@ let g:go_metalinter_autosave = 1
 let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
 set backspace=indent,eol,start
 set updatetime=100
-
-"*****************************************************************************
-"*****************************************************************************
-
-"" Include user's local vim config
-if filereadable(expand("~/.vimrc.local"))
-  source ~/.vimrc.local
-endif
 
 "*****************************************************************************
 "" Convenience variables
@@ -533,8 +483,6 @@ endif
 " format on enter, <cr> could be remapped by other vim plugin
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-
-" GoTo code navigation.
 
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
