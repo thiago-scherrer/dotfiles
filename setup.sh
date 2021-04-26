@@ -16,7 +16,6 @@ function aptSetup() {
 		lm-sensors \
 		nasm \
 		ubuntu-restricted-extras \
-		vim \
 		vlc* \
 		build-essential \
 		curl \
@@ -40,7 +39,9 @@ function aptSetup() {
 		nodejs \
 		npm \
 		libncurses5-dev \
-		libncursesw5-dev
+		libncursesw5-dev \
+		xorg-dev \
+		python3-dev \
 
 	npm install --global yar
 }
