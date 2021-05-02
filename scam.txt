@@ -19,6 +19,7 @@ https://github.com/tfutils/tfenv.git
 https://github.com/tpope/vim-commentary
 https://github.com/tpope/vim-fugitive
 https://github.com/tpope/vim-rhubarb
+https://github.com/tpope/vim-surround
 https://github.com/vim-airline/vim-airline
 https://github.com/vim-airline/vim-airline-themes
 https://github.com/vim-scripts/CSApprox
