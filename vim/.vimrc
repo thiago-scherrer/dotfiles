@@ -51,6 +51,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/CSApprox'
 Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
+Plug 'tpope/vim-surround'
 
 let g:make = 'gmake'
 if exists('make')
@@ -378,8 +379,8 @@ let g:go_highlight_function_calls = 1
 let g:go_highlight_functions = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_types = 1
-let g:go_metalinter_autosave = 1
-let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
+let g:go_metalinter_autosave = 0
+"let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
 set backspace=indent,eol,start
 set updatetime=100
 
@@ -513,5 +514,5 @@ augroup end
 " provide custom statusline: lightline.vim, vim-airline.
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
-" This unsets the last search pattern register by hitting return                          
-nnoremap <CR> :noh<CR><CR> 
+" Unset last search
+nnoremap <CR> :noh <CR><CR>
