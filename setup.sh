@@ -10,6 +10,7 @@ function aptSetup() {
 		cura \
 		curl \
 		exuberant-ctags \
+		feh \
 		gimp \
 		git \
 		htop \
@@ -142,6 +143,10 @@ function i3Setup(){
 	cp -r $I3PKG/.fonts ~/
 	cp -r -v $I3PKG/.config/* ~/.config/
 
+}
+
+function ranger () {
+	cp -r ranger/* ~/.config/ranger/
 }
 
 aptSetup
