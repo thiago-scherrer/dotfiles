@@ -125,7 +125,6 @@ function i3Setup(){
 		fonts-mplus \
 		xsettingsd \
 		lxappearance \
-		scrot \
 		viewnior \
 		compton \
 		lxappearance \
