@@ -8,7 +8,6 @@ general {
 		color_bad = '#ba5e57'
 }
 
-order += "memory"
 order += "load"
 order += "cpu_temperature 0"
 order += "disk /"
@@ -17,10 +16,6 @@ order += "ethernet eth0"
 order += "wireless wlan0"
 order += "volume master"
 order += "tztime local"
-
-memory {
-        format = "<span background='#f59311'>  Free Ram: %available </span>"
-}
 
 load {
         format = "<span background='#f59335'>  %5min Load </span>"
@@ -61,3 +56,4 @@ tztime local {
 		format = "<span background='#81a1c1'> %time </span>"
 		format_time = " %a %-d %b %H:%M"
 }
+

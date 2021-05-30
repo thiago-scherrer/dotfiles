@@ -10,11 +10,12 @@ floating_modifier $super
 
 #autostart
 exec --no-startup-id hsetroot -center ~/Pictures/wallpaper/Firefox_wallpaper.png
+
 exec --no-startup-id xsettingsd &
 exec --no-startup-id compton -b
 
 # start a terminal
-bindsym $super+Return exec terminator
+bindsym $super+Return exec i3-sensible-terminal
 
 # start dmenu (a program launcher)
 bindsym $super+Shift+d exec i3-dmenu-desktop --dmenu="dmenu -i -fn 'Noto Sans:size=8'"

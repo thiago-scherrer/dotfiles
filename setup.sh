@@ -7,7 +7,6 @@ function aptSetup() {
 	&& sudo apt install \
 		build-essential \
 		cmake \
-		cura \
 		curl \
 		exuberant-ctags \
 		feh \
@@ -53,10 +52,8 @@ function aptSetup() {
 		pkg-config \
 		python3-dev \
 		ranger \
-		ubuntu-restricted-extras \
 		universal-ctags \
 		unzip \
-		vlc* \
 		x11-apps \
 		xclip \
 		xfce4-screenshooter \
@@ -64,7 +61,7 @@ function aptSetup() {
 		zip \
 		zlib1g-dev \
 		zsh \
-	    terminator \
+	    terminator
 
 	npm install --global yar
 }
@@ -117,6 +114,7 @@ function i3Setup(){
 		i3status \
 		suckless-tools \
 		compton \
+		compton-conf \
 		hsetroot \
 		rxvt-unicode \
 		xsel \
@@ -140,8 +138,8 @@ function i3Setup(){
 	cp -v $I3PKG/.xsettingsd ~/
 	cp -v $I3PKG/.urxvt ~/
 	cp -r $I3PKG/.fonts ~/
-	cp -r -v $I3PKG/.config/* ~/.config/
-
+	cp -r -v $I3PKG/.config/dust ~/.config
+	cp -r -v $I3PKG/.config/compton.conf ~/.config
 }
 
 function ranger () {
