@@ -59,6 +59,7 @@ function zshSetup () {
 }
 
 function vimSetup () {
+	mkdir -p ~/tmp
 	cp vim/.vimrc ~/.vimrc
 }
 
