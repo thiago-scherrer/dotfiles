@@ -448,3 +448,11 @@ augroup end
 
 " Unset last search
 nnoremap <CR> :noh <CR><CR>
+
+" Terraform template
+au BufNewFile,BufRead,BufReadPost *.tpl set syntax=bash
+
+" Custom bkp file
+set directory=$HOME/tmp/
+set backupdir=$HOME/tmp/
+set undodir=$HOME/tmp/

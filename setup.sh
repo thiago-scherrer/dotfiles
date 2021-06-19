@@ -79,6 +79,7 @@ function zshSetup () {
 }
 
 function vimSetup () {
+	mkdir -p ~/tmp
 	git clone git@github.com:vim/vim.git vim_tmp
 	cd vim_tmp
 	sudo apt remove vim* -y
