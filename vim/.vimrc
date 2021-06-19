@@ -25,7 +25,7 @@ call plug#begin(expand('~/.vim/plugged'))
 "*****************************************************************************
 Plug 'Yggdroot/indentLine'
 Plug 'brooth/far.vim'
-Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'joshdick/onedark.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
 Plug 'hashivim/vim-terraform'
@@ -91,7 +91,7 @@ set ruler
 set number
 
 let no_buffers_menu=1
-colorscheme dracula
+colorscheme onedark
 
 set mousemodel=popup
 set t_Co=256
