@@ -25,11 +25,11 @@ call plug#begin(expand('~/.vim/plugged'))
 "*****************************************************************************
 Plug 'Yggdroot/indentLine'
 Plug 'brooth/far.vim'
-Plug 'joshdick/onedark.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
 Plug 'hashivim/vim-terraform'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+Plug 'joshdick/onedark.vim'
 Plug 'mbbill/undotree'
 Plug 'mhinz/vim-signify'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
