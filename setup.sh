@@ -96,6 +96,8 @@ function vimSetup () {
 	make -j2
 	sudo make install
 
+	sudo npm install -g dockerfile-language-server-nodejs
+
 	cd ..
 	rm -rf vim_tmp
 	cp vim/.vimrc ~/.vimrc
