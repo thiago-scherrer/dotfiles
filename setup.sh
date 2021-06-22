@@ -8,6 +8,7 @@ function aptSetup() {
 		build-essential \
 		cmake \
 		curl \
+		evince \
 		exuberant-ctags \
 		feh \
 		gimp \
