@@ -11,6 +11,7 @@ function aptSetup() {
 		evince \
 		exuberant-ctags \
 		feh \
+		fzf \
 		gimp \
 		git \
 		htop \
