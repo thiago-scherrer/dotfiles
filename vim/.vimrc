@@ -34,7 +34,6 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'mbbill/undotree'
 Plug 'mhinz/vim-signify'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
@@ -146,36 +145,6 @@ cnoreabbrev WQ wq
 cnoreabbrev W w
 cnoreabbrev Q q
 cnoreabbrev Qall qall
-
-"" NERDTree configuration
-let NERDTreeWinSize = 19
-let NERDTreeAutoDeleteBuffer = 1
-autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
-    \ quit | endif
-let NERDTreeShowHidden=1
-let NERDTreeIgnore=['\.git$', '\.swp']
-:nnoremap <C-g> :NERDTreeToggle<CR>
-inoremap <expr> <Tab> TabComplete()
-fun! TabComplete()
-    if getline('.')[col('.') - 2] =~ '\K' || pumvisible()
-        return "\<C-P>"
-    else
-        return "\<Tab>"
-    endif
-endfun
-set completeopt=menu,menuone,noinsert
-inoremap <expr> <CR> pumvisible() ? "\<C-Y>" : "\<CR>"
-autocmd InsertCharPre * call AutoComplete()
-fun! AutoComplete()
-    if v:char =~ '\K'
-        \ && getline('.')[col('.') - 4] !~ '\K'
-        \ && getline('.')[col('.') - 3] =~ '\K'
-        \ && getline('.')[col('.') - 2] =~ '\K' " last char
-        \ && getline('.')[col('.') - 1] !~ '\K'
-
-        call feedkeys("\<C-P>", 'n')
-    end
-endfun
 
 " terminal emulation
 nnoremap <silent> <leader>sh :terminal<CR>
