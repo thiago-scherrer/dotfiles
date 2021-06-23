@@ -1,23 +1,19 @@
-name: ci
+name: security-check
 
 on:
   push:
-    branches: main
 
 jobs:
-  build:
-    name: Run build
-
+  scan:
+    name: Run Salus scan
     runs-on: ubuntu-latest
-
     steps:
-
-    - uses: actions/checkout@master
+    -
+      uses: actions/checkout@master
       with:
         ref: ${{ github.ref }}
-
-    - name: Run scam
+    -
+      name: Run scam
       run: |
-
         bash salus.sh
 
