@@ -52,6 +52,7 @@ function aptSetup() {
 		openvpn \
 		pkg-config \
 		python3-dev \
+		ripgrep \
 		ranger \
 		universal-ctags \
 		unzip \
