@@ -67,6 +67,7 @@ function aptSetup() {
 	    terminator
 
 	npm install --global yar
+	cp .ripgreprc ~/
 }
 
 function zshSetup () {

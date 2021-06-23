@@ -106,6 +106,9 @@ EDITOR='vim'
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
+export FZF_DEFAULT_COMMAND='rg -l ""'
+
 alias ctags="ctags --recurse=yes --exclude=.git --exclude=.terraform --exclude=.svn --exclude=vendor --exclude=node_modules --exclude=\*.swp --exclude=\*.cache"
 
 alias updateall="sudo apt update && sudo apt dist-upgrade -y && sudo apt autoremove -y && sudo apt clean all"
