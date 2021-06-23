@@ -98,6 +98,9 @@ function vimSetup () {
 	sudo make install
 
 	sudo npm install -g dockerfile-language-server-nodejs
+	sudo gem install solargraph
+
+	vim -c 'CocInstall -sync coc-json coc-html coc-css coc-docker coc-go coc-htmlcoc-json coc-markdownlint coc-pyright coc-sh coc-solargraph coc-sql coc-tsserver coc-yaml |q'
 
 	cd ..
 	rm -rf vim_tmp
