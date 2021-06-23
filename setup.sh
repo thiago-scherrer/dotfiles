@@ -11,6 +11,7 @@ function aptSetup() {
 		evince \
 		exuberant-ctags \
 		feh \
+		fzf \
 		gimp \
 		git \
 		htop \
@@ -52,6 +53,7 @@ function aptSetup() {
 		openvpn \
 		pkg-config \
 		python3-dev \
+		ripgrep \
 		ranger \
 		universal-ctags \
 		unzip \
@@ -65,6 +67,7 @@ function aptSetup() {
 	    terminator
 
 	npm install --global yar
+	cp .ripgreprc ~/
 }
 
 function zshSetup () {
@@ -96,6 +99,11 @@ function vimSetup () {
         --enable-cscope
 	make -j2
 	sudo make install
+
+	sudo npm install -g dockerfile-language-server-nodejs
+	sudo gem install solargraph
+
+	vim -c 'CocInstall -sync coc-json coc-html coc-css coc-docker coc-go coc-htmlcoc-json coc-markdownlint coc-pyright coc-sh coc-solargraph coc-sql coc-tsserver coc-yaml |q'
 
 	cd ..
 	rm -rf vim_tmp

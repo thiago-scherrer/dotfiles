@@ -1,7 +1,6 @@
 https://github.com/Yggdroot/indentLine
 https://github.com/brooth/far.vim
 https://github.com/editorconfig/editorconfig-vim
-https://github.com/fatih/vim-go
 https://github.com/hashivim/vim-terraform
 https://github.com/iamcco/markdown-preview.nvim
 https://github.com/joshdick/onedark.vim
@@ -9,6 +8,7 @@ https://github.com/mbbill/undotree
 https://github.com/mhinz/vim-signify
 https://github.com/neoclide/coc.nvim
 https://github.com/scrooloose/nerdtree
+https://github.com/tpope/vim-commentar
 https://github.com/tpope/vim-fugitive
 https://github.com/tpope/vim-surround
 https://github.com/vim-airline/vim-airline
