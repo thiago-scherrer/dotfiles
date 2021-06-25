@@ -418,4 +418,5 @@ nnoremap <space>gm :Gmove<Space>
 nnoremap <space>gb :Git branch<Space>
 nnoremap <space>go :Git checkout<Space>
 nnoremap <space>gps :Git -c push.default=current push<CR>
-nnoremap <space>gpl :Dispatch! git pull<CR>
+nnoremap <space>gpl :Git fetch <CR>
+nnoremap <space>gpll :Git rebase <CR>
