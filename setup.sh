@@ -6,6 +6,7 @@ function aptSetup() {
 	&& sudo apt full-upgrade -y \
 	&& sudo apt install \
 		build-essential \
+		chromium-browser \
 		cmake \
 		curl \
 		evince \
@@ -53,8 +54,8 @@ function aptSetup() {
 		openvpn \
 		pkg-config \
 		python3-dev \
-		ripgrep \
 		ranger \
+		ripgrep \
 		universal-ctags \
 		unzip \
 		x11-apps \
