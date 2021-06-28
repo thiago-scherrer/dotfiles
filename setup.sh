@@ -85,6 +85,7 @@ function zshSetup () {
 
 function vimSetup () {
 	mkdir -p ~/tmp
+
 	git clone git@github.com:vim/vim.git vim_tmp
 	cd vim_tmp
 	sudo apt remove vim* -y
@@ -140,21 +141,11 @@ function i3Setup(){
 		lxappearance-obconf \
 		nitrogen \
 		pavucontrol
-
-	export I3PKG=/tmp/i3-pkg
-
-	git clone https://github.com/addy-dclxvi/i3-starterpack.git $I3PKG
-
-	cp -v $I3PKG/.Xresources ~/
-	cp -v $I3PKG/.xsettingsd ~/
-	cp -v $I3PKG/.urxvt ~/
-	cp -r $I3PKG/.fonts ~/
-	cp -r -v $I3PKG/.config/dust ~/.config
-	cp -r -v $I3PKG/.config/compton.conf ~/.config
 }
 
-function ranger () {
-	cp -r ranger/* ~/.config/ranger/
+function importConfig () {
+	cp -rv home/* ~/
+	cp -rv config/* ~/.config/
 }
 
 aptSetup
