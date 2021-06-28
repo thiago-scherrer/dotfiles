@@ -274,24 +274,24 @@ vnoremap K :m '<-2<CR>gv=gv
 "*****************************************************************************
 
 " run :GoBuild or :GoTestCompile based on the go file
-au filetype go inoremap <buffer> . .<C-x><C-o>
-autocmd Filetype go setlocal tabstop=4 shiftwidth=4 softtabstop=4
-filetype plugin indent on
-let g:go_addtags_transform = "camelcase"
-let g:go_auto_sameids = 0
-let g:go_auto_type_info = 1
-let g:go_fmt_command = "goimports"
-let g:go_highlight_build_constraints = 1
-let g:go_highlight_extra_types = 1
-let g:go_highlight_fields = 1
-let g:go_highlight_function_calls = 1
-let g:go_highlight_functions = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_types = 1
-let g:go_metalinter_autosave = 0
-"let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
-set backspace=indent,eol,start
-set updatetime=100
+"au filetype go inoremap <buffer> . .<C-x><C-o>
+"autocmd Filetype go setlocal tabstop=4 shiftwidth=4 softtabstop=4
+"filetype plugin indent on
+"let g:go_addtags_transform = "camelcase"
+"let g:go_auto_sameids = 0
+"let g:go_auto_type_info = 1
+"let g:go_fmt_command = "goimports"
+"let g:go_highlight_build_constraints = 1
+"let g:go_highlight_extra_types = 1
+"let g:go_highlight_fields = 1
+"let g:go_highlight_function_calls = 1
+"let g:go_highlight_functions = 1
+"let g:go_highlight_operators = 1
+"let g:go_highlight_types = 1
+"let g:go_metalinter_autosave = 0
+""let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
+"set backspace=indent,eol,start
+"set updatetime=100
 
 " vim-airline
 let g:airline_symbols = {}
