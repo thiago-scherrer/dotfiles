@@ -144,8 +144,8 @@ function i3Setup(){
 }
 
 function importConfig () {
-	cp -rv home/* ~/
-	cp -rv config/* ~/.config/
+	cp -rvT home ~/
+	cp --rvT config ~/.config/
 }
 
 aptSetup
