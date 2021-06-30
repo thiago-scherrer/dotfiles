@@ -409,5 +409,9 @@ nnoremap <space>gpp :Git rebase -i origin/main <CR>
 nnoremap <space>gps :Git -c push.default=current push<CR>
 nnoremap <space>gs :Git status<CR>
 nnoremap <space>gw :Git write<CR><CR>
-noremap <Leader>gll :Git pull<CR>
-noremap <Leader>gr :Git remove<CR>
+nnoremap <space>gll :Git pull<CR>
+nnoremap <space>gr :Git remove<CR>
+
+" Github CLI
+nnoremap <space>pr :! gh pr create -a "@me" <CR>
+
