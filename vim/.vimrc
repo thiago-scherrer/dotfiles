@@ -204,15 +204,6 @@ set autoread
 noremap <Leader>h :<C-u>split<CR>
 noremap <Leader>v :<C-u>vsplit<CR>
 
-"" Git
-noremap <Leader>ga :Gwrite<CR>
-noremap <Leader>gc :Gcommit<CR>
-noremap <Leader>gsh :Gpush<CR>
-noremap <Leader>gll :Gpull<CR>
-noremap <Leader>gs :Gstatus<CR>
-noremap <Leader>gb :Gblame<CR>
-noremap <Leader>gd :Gvdiff<CR>
-noremap <Leader>gr :Gremove<CR>
 
 "" Tabs
 nnoremap <Tab> gt
@@ -405,19 +396,18 @@ set undodir=$HOME/tmp/
 
 " fugitive git bindings
 nnoremap <space>ga :Git add %:p<CR><CR>
-nnoremap <space>gs :Gstatus<CR>
-nnoremap <space>gc :Gcommit -v -q<CR>
-nnoremap <space>gt :Gcommit -v -q %:p<CR>
-nnoremap <space>gd :Gdiff<CR>
-nnoremap <space>ge :Gedit<CR>
-nnoremap <space>gr :Gread<CR>
-nnoremap <space>gw :Gwrite<CR><CR>
-nnoremap <space>gl :silent! Glog<CR>:bot copen<CR>
-nnoremap <space>gp :Ggrep<Space>
-nnoremap <space>gm :Gmove<Space>
 nnoremap <space>gb :Git branch<Space>
+nnoremap <space>gc :Git commit -v -q<CR>
+nnoremap <space>gd :Git diff<CR>
+nnoremap <space>ge :Git edit<CR>
+nnoremap <space>gl :silent! Glog<CR>:bot copen<CR>
 nnoremap <space>go :Git checkout<Space>
-nnoremap <space>gps :Git -c push.default=current push<CR>
+nnoremap <space>gp :Git grep<Space>
 nnoremap <space>gpl :Git fetch <CR>
 nnoremap <space>gpll :Git rebase <CR>
 nnoremap <space>gpp :Git rebase -i origin/main <CR>
+nnoremap <space>gps :Git -c push.default=current push<CR>
+nnoremap <space>gs :Git status<CR>
+nnoremap <space>gw :Git write<CR><CR>
+noremap <Leader>gll :Git pull<CR>
+noremap <Leader>gr :Git remove<CR>
