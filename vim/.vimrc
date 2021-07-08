@@ -40,7 +40,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'voldikss/vim-floaterm'
 
 let g:make = 'gmake'
 if exists('make')
@@ -416,4 +415,3 @@ nnoremap <space>gr :Git remove<CR>
 
 " Github CLI
 nnoremap <space>pr :! gh pr create -a "@me" <CR>
-
