@@ -14,4 +14,3 @@ https://github.com/tpope/vim-fugitive
 https://github.com/tpope/vim-surround
 https://github.com/vim-airline/vim-airline
 https://github.com/vim-airline/vim-airline-themes
-https://github.com/voldikss/vim-floaterm
