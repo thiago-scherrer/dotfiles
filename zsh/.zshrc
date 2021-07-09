@@ -20,6 +20,8 @@ export PATH=$PATH:/usr/local/go/bin:/home/$USER/.local/bin:$HOME/go/bin/:$HOME/.
 export GPG_TTY=$(tty)
 export VISUAL=/usr/bin/vim
 
+source $HOME/.cargo/env
+
 EDITOR='vim'
 
 export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
