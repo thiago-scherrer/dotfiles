@@ -4,7 +4,6 @@ https://github.com/editorconfig/editorconfig-vim
 https://github.com/hashivim/vim-terraform
 https://github.com/iamcco/markdown-preview.nvim
 https://github.com/joshdick/onedark.vim
-https://github.com/junegunn/fzf
 https://github.com/mbbill/undotree
 https://github.com/mg979/vim-visual-multi
 https://github.com/mhinz/vim-signify
