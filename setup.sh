@@ -6,7 +6,6 @@ function aptSetup() {
 	&& sudo apt full-upgrade -y \
 	&& sudo apt install \
 		build-essential \
-		chromium-browser \
 		cmake \
 		curl \
 		evince \
