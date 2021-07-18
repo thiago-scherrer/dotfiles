@@ -59,6 +59,8 @@ set fileencoding=utf-8
 set fileencodings=utf-8
 set ttyfast
 
+set updatetime=100
+
 "" Fix backspace indent
 set backspace=indent,eol,start
 
@@ -267,23 +269,13 @@ vnoremap K :m '<-2<CR>gv=gv
 
 " run :GoBuild or :GoTestCompile based on the go file
 "au filetype go inoremap <buffer> . .<C-x><C-o>
-"autocmd Filetype go setlocal tabstop=4 shiftwidth=4 softtabstop=4
-"filetype plugin indent on
-"let g:go_addtags_transform = "camelcase"
-"let g:go_auto_sameids = 0
-"let g:go_auto_type_info = 1
-"let g:go_fmt_command = "goimports"
-"let g:go_highlight_build_constraints = 1
-"let g:go_highlight_extra_types = 1
-"let g:go_highlight_fields = 1
-"let g:go_highlight_function_calls = 1
-"let g:go_highlight_functions = 1
-"let g:go_highlight_operators = 1
-"let g:go_highlight_types = 1
-"let g:go_metalinter_autosave = 0
-""let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
-"set backspace=indent,eol,start
-"set updatetime=100
+autocmd Filetype go setlocal tabstop=4 shiftwidth=4 softtabstop=4
+let g:go_fmt_autosave = 0
+filetype plugin indent on
+let g:go_addtags_transform = "camelcase"
+let g:go_auto_sameids = 0
+let g:go_auto_type_info = 1
+set backspace=indent,eol,start
 
 " vim-airline
 let g:airline_symbols = {}
@@ -338,23 +330,8 @@ let g:mkdp_port = ''
 let g:mkdp_page_title = '「${name}」'
 let g:mkdp_filetypes = ['markdown']
 
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
 " Use <c-space> to trigger completion.
-if has('nvim')
-  inoremap <silent><expr> <c-space> coc#refresh()
-else
   inoremap <silent><expr> <c-@> coc#refresh()
-endif
 
 " Make <CR> auto-select the first completion item and notify coc.nvim to
 " format on enter, <cr> could be remapped by other vim plugin
@@ -419,3 +396,22 @@ nnoremap <space>pr :! gh pr create -a "@me" <CR>
 " buffer tab :)
 nnoremap  <silent>   <tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bnext<CR>
 nnoremap  <silent> <s-tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bprevious<CR>
+
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Use K to show documentation in preview window.
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  elseif (coc#rpc#ready())
+    call CocActionAsync('doHover')
+  else
+    execute '!' . &keywordprg . " " . expand('<cword>')
+  endif
+endfunction
