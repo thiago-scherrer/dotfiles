@@ -376,7 +376,7 @@ set undodir=$HOME/tmp/
 nnoremap <space>ga :Git add %:p<CR><CR>
 nnoremap <space>gb :Git branch<Space>
 nnoremap <space>gc :Git commit -v -q<CR>
-nnoremap <space>gd :Git diff<CR>
+nnoremap <space>gdd :Git diff<CR>
 nnoremap <space>ge :Git edit<CR>
 nnoremap <space>gl :silent! Glog<CR>:bot copen<CR>
 nnoremap <space>go :Git checkout<Space>
@@ -388,7 +388,6 @@ nnoremap <space>gps :Git -c push.default=current push<CR>
 nnoremap <space>gs :Git status<CR>
 nnoremap <space>gw :Git write<CR><CR>
 nnoremap <space>gll :Git pull<CR>
-nnoremap <space>gr :Git remove<CR>
 
 " Github CLI
 nnoremap <space>pr :! gh pr create -a "@me" <CR>
