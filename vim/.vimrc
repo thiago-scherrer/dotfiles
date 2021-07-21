@@ -376,7 +376,7 @@ set undodir=$HOME/tmp/
 nnoremap <space>ga :Git add %:p<CR><CR>
 nnoremap <space>gb :Git branch<Space>
 nnoremap <space>gc :Git commit -v -q<CR>
-nnoremap <space>gdd :Gdiffsplit!<CR>
+nnoremap <space>gdd :Gvdiffsplit!<CR>
 nnoremap <space>ge :Git edit<CR>
 nnoremap <space>gl :silent! Glog<CR>:bot copen<CR>
 nnoremap <space>go :Git checkout<Space>
