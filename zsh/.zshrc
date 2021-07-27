@@ -16,7 +16,7 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-export PATH=$PATH:/usr/local/go/bin:/home/$USER/.local/bin:$HOME/go/bin/:$HOME/.tfenv/bin
+export PATH=$PATH:/usr/local/go/bin:/home/$USER/.local/bin:$HOME/go/bin/:$HOME/.tfenv/bin:/usr/games
 export GPG_TTY=$(tty)
 export VISUAL=/usr/bin/vim
 
