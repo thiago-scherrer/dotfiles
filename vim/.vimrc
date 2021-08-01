@@ -24,7 +24,6 @@ call plug#begin(expand('~/.vim/plugged'))
 "" Plug install packages
 "*****************************************************************************
 Plug 'Yggdroot/indentLine'
-Plug 'brooth/far.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
 Plug 'hashivim/vim-terraform'
@@ -415,7 +414,7 @@ function! s:show_documentation()
   endif
 endfunction
 
-" hard mode 
+" hard mode
 inoremap <C-h> <Left>
 inoremap <C-j> <Down>
 inoremap <C-k> <Up>
