@@ -1,5 +1,6 @@
 https://github.com/Yggdroot/indentLine
 https://github.com/editorconfig/editorconfig-vim
+https://github.com/govim/govim
 https://github.com/hashivim/vim-terraform
 https://github.com/iamcco/markdown-preview.nvim
 https://github.com/joshdick/onedark.vim

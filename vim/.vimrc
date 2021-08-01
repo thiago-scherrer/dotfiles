@@ -25,7 +25,7 @@ call plug#begin(expand('~/.vim/plugged'))
 "*****************************************************************************
 Plug 'Yggdroot/indentLine'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
+Plug 'govim/govim'
 Plug 'hashivim/vim-terraform'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'joshdick/onedark.vim'
@@ -266,16 +266,6 @@ vnoremap K :m '<-2<CR>gv=gv
 "" Custom configs
 "*****************************************************************************
 
-" run :GoBuild or :GoTestCompile based on the go file
-"au filetype go inoremap <buffer> . .<C-x><C-o>
-autocmd Filetype go setlocal tabstop=4 shiftwidth=4 softtabstop=4
-let g:go_fmt_autosave = 0
-filetype plugin indent on
-let g:go_addtags_transform = "camelcase"
-let g:go_auto_sameids = 0
-let g:go_auto_type_info = 1
-set backspace=indent,eol,start
-
 " vim-airline
 let g:airline_symbols = {}
 let g:airline#extensions#tabline#left_sep = ' '
@@ -423,3 +413,16 @@ cnoremap <C-h> <Left>
 cnoremap <C-j> <Down>
 cnoremap <C-k> <Up>
 cnoremap <C-l> <Right>
+
+" govim
+set ttymouse=sgr
+set balloondelay=250
+set signcolumn=yes
+autocmd! BufEnter,BufNewFile *.go,go.mod syntax on
+autocmd! BufLeave *.go,go.mod syntax off
+set autoindent
+set smartindent
+filetype indent on
+set completeopt+=popup
+set completepopup=align:menu,border:off,highlight:Pmenu
+nnoremap <space>wt :GOVIMReferences <CR>
