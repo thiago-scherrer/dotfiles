@@ -415,14 +415,14 @@ cnoremap <C-k> <Up>
 cnoremap <C-l> <Right>
 
 " govim
-set ttymouse=sgr
-set balloondelay=250
-set signcolumn=yes
 autocmd! BufEnter,BufNewFile *.go,go.mod syntax on
 autocmd! BufLeave *.go,go.mod syntax off
-set autoindent
-set smartindent
 filetype indent on
+nnoremap <space>wt :GOVIMReferences <CR>
+set autoindent
+set balloondelay=250
 set completeopt+=popup
 set completepopup=align:menu,border:off,highlight:Pmenu
-nnoremap <space>wt :GOVIMReferences <CR>
+set signcolumn=yes
+set smartindent
+set ttymouse=sgr
