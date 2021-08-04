@@ -25,7 +25,7 @@ call plug#begin(expand('~/.vim/plugged'))
 "*****************************************************************************
 Plug 'Yggdroot/indentLine'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'govim/govim'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'hashivim/vim-terraform'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'joshdick/onedark.vim'
@@ -414,15 +414,3 @@ cnoremap <C-j> <Down>
 cnoremap <C-k> <Up>
 cnoremap <C-l> <Right>
 
-" govim
-autocmd! BufEnter,BufNewFile *.go,go.mod syntax on
-autocmd! BufLeave *.go,go.mod syntax off
-filetype indent on
-nnoremap <space>wt :GOVIMReferences <CR>
-set autoindent
-set balloondelay=250
-set completeopt+=popup
-set completepopup=align:menu,border:off,highlight:Pmenu
-set signcolumn=yes
-set smartindent
-set ttymouse=sgr
