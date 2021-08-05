@@ -404,6 +404,15 @@ function! s:show_documentation()
   endif
 endfunction
 
+" Go
+autocmd Filetype go setlocal tabstop=4 shiftwidth=4 softtabstop=4
+filetype plugin indent on
+let g:go_addtags_transform = "camelcase"
+let g:go_auto_sameids = 0
+let g:go_auto_type_info = 1
+let g:go_fmt_autosave = 0
+set backspace=indent,eol,start
+
 " hard mode
 inoremap <C-h> <Left>
 inoremap <C-j> <Down>
