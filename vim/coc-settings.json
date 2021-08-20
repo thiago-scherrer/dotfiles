@@ -1,45 +1,44 @@
 {
-  "suggest.noselect": false,
-  "diagnostic.errorSign": "✘",
-  "diagnostic.warningSign": "!",
-  "diagnostic.infoSign": "?",
-  "diagnostic.checkCurrentLine": true,
-  "coc.preferences.formatOnSaveFiletypes": [
-    "css",
-    "docker",
-    "go",
-    "html",
-    "javascript",
-    "json",
-    "markdownlint",
-    "pyright",
-    "ruby",
-    "scss",
-    "sh",
-    "sql",
-    "yaml"
-  ],
-  "languageserver": {
-    "golang": {
-      "command": "gopls",
-      "rootPatterns": [
-        "go.mod"
-      ],
-      "filetypes": [
-        "go"
-      ]
+    "suggest.noselect": false,
+    "diagnostic.errorSign": "✘",
+    "diagnostic.warningSign": "!",
+    "diagnostic.infoSign": "?",
+    "diagnostic.checkCurrentLine": true,
+    "coc.preferences.formatOnSaveFiletypes": [
+        "css",
+        "docker",
+        "go",
+        "html",
+        "javascript",
+        "json",
+        "pyright",
+        "ruby",
+        "scss",
+        "sh",
+        "sql",
+        "yaml"
+    ],
+    "languageserver": {
+        "golang": {
+            "command": "gopls",
+            "rootPatterns": [
+                "go.mod"
+            ],
+            "filetypes": [
+                "go"
+            ]
+        },
+        "dockerfile": {
+            "command": "docker-langserver",
+            "filetypes": [
+                "dockerfile"
+            ],
+            "args": [
+                "--stdio"
+            ]
+        }
     },
-    "dockerfile": {
-      "command": "docker-langserver",
-      "filetypes": [
-        "dockerfile"
-      ],
-      "args": [
-        "--stdio"
-      ]
+    "go.goplsOptions": {
+        "staticcheck": true
     }
-  },
-  "go.goplsOptions": {
-    "staticcheck": true
-  }
 }
