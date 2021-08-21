@@ -97,7 +97,8 @@ function vimSetup () {
         --enable-perlinterp=yes \
         --enable-luainterp=yes \
         --enable-gui=gtk2 \
-        --enable-cscope
+        --enable-cscope \
+		--enable-terminal
 	make -j2
 	sudo make install
 
