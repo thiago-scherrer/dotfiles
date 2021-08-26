@@ -1,73 +1,63 @@
 #!/bin/bash
 
-function aptSetup() {
-
-	sudo apt update \
-	&& sudo apt full-upgrade -y \
-	&& sudo apt install \
-		build-essential \
-		cmake \
-		curl \
-		evince \
-		exuberant-ctags \
-		feh \
-		fzf \
-		gimp \
-		git \
-		htop \
-		imagemagick \
-		irssi \
-		libavcodec-extra \
-		libboost-all-dev \
-		libboost-dev \
-		libboost-filesystem-dev \
-		libboost-filesystem-dev \
-		libboost-iostreams-dev \
-		libboost-locale-dev \
-		libboost-log-dev \
-		libboost-regex-dev \
-		libboost-thread-dev \
-		libcereal-dev \
-		libcurl4-openssl-dev \
-		libdbus-1-dev \
-		libeigen3-dev \
-		libfreetype-dev \
-		libgmpxx4ldbl \
-		libgtk-3-dev \
-		libgtk2.0-dev \
-		libncurses5-dev \
-		libncursesw5-dev \
-		libnlopt-cxx-dev \
-		libnlopt-dev \
-		libopenvdb-dev \
-		libsdl2-dev \
-		libtbb-dev \
-		libudev-dev \
-		libwxgtk3.0-dev \
-		libwxgtk3.0-gtk3-dev \
-		libz-dev libpng-dev \
-		lm-sensors \
-		nasm \
-		nodejs \
-		npm \
-		openvpn \
-		pkg-config \
-		python3-dev \
-		ranger \
-		ripgrep \
-		universal-ctags \
-		unzip \
-		x11-apps \
-		xclip \
-		xfce4-screenshooter \
-		xorg-dev \
-		zip \
-		zlib1g-dev \
-		zsh \
-	    terminator
-
-	npm install --global yar
-	cp .ripgreprc ~/
+function systemUpdate() {
+	su -c '
+		pacman -Syu \
+		&& pacman -S \
+			TDM \
+			cmake \
+			community/prusa-slicer \
+			cron \
+			curl \
+			dmenu \
+			dunst \
+			extra/noto-fonts-extra \
+			firefox \
+			fzf \
+			gcc \
+			git \
+			github-cli \
+			htop \
+			i3-wm \
+			imagemagick \
+			libgtk \
+			libncurses
+			light \
+			lightdm \
+			lxappearance \
+			lxappearance-obconf \
+			lxdm \
+			make \
+			nasm \
+			ncurses \
+			nitrogen \
+			node \
+			npm \
+			ntp \
+			openvpn \
+			pavucontrol \
+			pcsc-tools \
+			pcscd \
+			pcsclite \
+			powerline \
+			python-pip \
+			python3 \
+			python3-config \
+			ranger \
+			reflector \
+			rg \
+			ruby \
+			terminator \
+			viewnior \
+			xclip \
+			xorg-server \
+			xterm \
+			yarn \
+			yubikey-manager-qt \
+			yubioath-desktop \
+			zip \
+		&& npm install --global yar
+	'
 }
 
 function zshSetup () {
@@ -85,9 +75,9 @@ function zshSetup () {
 function vimSetup () {
 	mkdir -p ~/tmp
 
-	git clone git@github.com:vim/vim.git vim_tmp
+	git clone https://github.com/vim/vim vim_tmp
 	cd vim_tmp
-	sudo apt remove vim* -y
+	su -c  'pacman -R vi*'
 	export VIMRUNTIMEDIR=/usr/share/vim/vim82
 	./configure --with-features=huge \
 		--enable-multibyte \
@@ -100,10 +90,10 @@ function vimSetup () {
         --enable-cscope \
 		--enable-terminal
 	make -j2
-	sudo make install
+	su -c 'make install'
 
-	sudo npm install -g dockerfile-language-server-nodejs
-	sudo gem install solargraph
+	su -c 'npm install -g dockerfile-language-server-nodejs'
+	su -c 'gem install solargraph'
 
 	vim -c 'CocInstall -sync coc-json coc-html coc-css coc-docker coc-go coc-htmlcoc-json coc-pyright coc-sh coc-solargraph coc-sql coc-tsserver coc-yaml |q'
 
@@ -116,40 +106,13 @@ function tfSetup(){
 	git clone https://github.com/tfutils/tfenv.git ~/.tfenv
 }
 
-function i3Setup(){
-	sudo apt update \
-	&& sudo apt install -y \
-		i3 \
-		i3-wm \
-		dunst \
-		i3lock \
-		i3status \
-		suckless-tools \
-		compton \
-		compton-conf \
-		hsetroot \
-		rxvt-unicode \
-		xsel \
-		rofi \
-		fonts-noto \
-		fonts-mplus \
-		xsettingsd \
-		lxappearance \
-		viewnior \
-		compton \
-		lxappearance \
-		lxappearance-obconf \
-		nitrogen \
-		pavucontrol
-}
 
 function importConfig () {
 	cp -rvT home ~/
 	cp -rvT config ~/.config/
 }
 
-aptSetup
+systemUpdate
 zshSetup
 vimSetup
 tfSetup
-i3Setup
