@@ -60,7 +60,6 @@ function systemUpdate() {
 		&& npm install --global yar \
 		&& systemctl enable cronie.service \
 		&& systemctl enable lightdm \
-		&& systemctl enable ntpd \
 		&& touch /etc/ntp.conf \
 		&& ntpd -q -g \
 		&& cp ntp/ntp.conf /etc/ntp.conf \
