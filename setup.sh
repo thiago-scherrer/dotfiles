@@ -57,6 +57,7 @@ function systemUpdate() {
 			yubikey-manager-qt \
 			yubioath-desktop \
 			zip \
+			pulseaudio \
 		&& npm install --global yar \
 		&& systemctl enable cronie.service \
 		&& systemctl enable lightdm \
