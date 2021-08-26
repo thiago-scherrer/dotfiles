@@ -24,6 +24,7 @@ function systemUpdate() {
 			libncurses
 			light \
 			lightdm \
+			lightdm-gtk-greeter \
 			lxappearance \
 			lxappearance-obconf \
 			lxdm \
@@ -56,7 +57,16 @@ function systemUpdate() {
 			yubikey-manager-qt \
 			yubioath-desktop \
 			zip \
-		&& npm install --global yar
+		&& npm install --global yar \
+		&& systemctl enable cronie.service \
+		&& systemctl enable lightdm \
+		&& systemctl enable ntpd \
+		&& touch /etc/ntp.conf \
+		&& ntpd -q -g \
+		&& cp ntp/ntp.conf /etc/ntp.conf \
+		&& ntpd -q -g \
+		&& ln -sf /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
+		&& cp cron/cron /var/spool/cron/root
 	'
 }
 
