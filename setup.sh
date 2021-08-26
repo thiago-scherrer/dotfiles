@@ -67,6 +67,7 @@ function systemUpdate() {
 		&& ln -sf /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
 		&& cp cron/cron /var/spool/cron/root
 	'
+	cp .gitconfig ~/
 }
 
 function zshSetup () {
