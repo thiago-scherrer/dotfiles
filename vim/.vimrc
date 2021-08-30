@@ -418,3 +418,5 @@ let g:go_auto_type_info = 1
 let g:go_fmt_autosave = 0
 set backspace=indent,eol,start
 
+" test
+set background=light
