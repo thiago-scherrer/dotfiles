@@ -27,7 +27,6 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'hashivim/vim-terraform'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
-Plug 'joshdick/onedark.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'mbbill/undotree'
@@ -87,7 +86,6 @@ set ruler
 set number
 
 let no_buffers_menu=1
-colorscheme onedark
 
 set mousemodel=popup
 set t_Co=256
@@ -417,6 +415,3 @@ let g:go_auto_sameids = 0
 let g:go_auto_type_info = 1
 let g:go_fmt_autosave = 0
 set backspace=indent,eol,start
-
-" test
-set background=light
