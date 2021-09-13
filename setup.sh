@@ -34,6 +34,7 @@ function systemUpdate() {
 			nitrogen \
 			node \
 			npm \
+			ntfs-3g \
 			ntp \
 			openvpn \
 			pavucontrol \
