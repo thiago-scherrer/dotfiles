@@ -386,6 +386,7 @@ nnoremap <space>gll :Git pull<CR>
 
 " Github CLI
 nnoremap <space>pr :! gh pr create -a "@me" <CR>
+nnoremap <space>prr :! gh pr merge -s -d <CR>
 
 " buffer tab :)
 nnoremap  <silent>   <tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bnext<CR>
