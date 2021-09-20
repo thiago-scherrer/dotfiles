@@ -20,6 +20,7 @@ function systemUpdate() {
 			htop \
 			i3-wm \
 			imagemagick \
+			ipython3 \
 			libgtk \
 			libncurses
 			light \

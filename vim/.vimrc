@@ -36,6 +36,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'pappasam/coc-jedi', { 'do': 'yarn install --frozen-lockfile && yarn build', 'branch': 'main' }
 
 let g:make = 'gmake'
 if exists('make')
@@ -419,7 +420,11 @@ let g:go_auto_type_info = 1
 let g:go_fmt_autosave = 0
 set backspace=indent,eol,start
 
+" fzf
 command! -bang -nargs=* Rg
   \ call fzf#vim#grep(
   \ "rg --column --line-number --no-heading --color=always --smart-case " .
   \ <q-args>, 1, fzf#vim#with_preview(), <bang>0)
+
+" python
+nnoremap <F5> <Esc>:w<CR>:!clear;python %<CR>
