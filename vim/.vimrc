@@ -377,7 +377,7 @@ nnoremap <space>ge :Git edit<CR>
 nnoremap <space>gl :silent! Glog<CR>:bot copen<CR>
 nnoremap <space>go :Git checkout<Space>
 nnoremap <space>gp :Git grep<Space>
-nnoremap <space>gpl :Git fetch <CR>
+nnoremap <space>gpl :! git fetch && git rebase<CR>
 nnoremap <space>gpll :Git rebase <CR>
 nnoremap <space>gpp :Git rebase -i origin/main <CR>
 nnoremap <space>gps :Git -c push.default=current push<CR>
@@ -387,6 +387,7 @@ nnoremap <space>gll :Git pull<CR>
 
 " Github CLI
 nnoremap <space>pr :! gh pr create -a "@me" <CR>
+nnoremap <space>prr :! gh pr merge -s -d <CR>
 
 " buffer tab :)
 nnoremap  <silent>   <tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bnext<CR>
