@@ -23,7 +23,6 @@ call plug#begin(expand('~/.vim/plugged'))
 "*****************************************************************************
 "" Plug install packages
 "*****************************************************************************
-Plug 'nanotech/jellybeans.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'hashivim/vim-terraform'
@@ -32,11 +31,13 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'mbbill/undotree'
 Plug 'mg979/vim-visual-multi'
+Plug 'nanotech/jellybeans.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'nvie/vim-flake8'
+Plug 'pappasam/coc-jedi', { 'do': 'yarn install --frozen-lockfile && yarn build', 'branch': 'main' }
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'pappasam/coc-jedi', { 'do': 'yarn install --frozen-lockfile && yarn build', 'branch': 'main' }
 
 let g:make = 'gmake'
 if exists('make')
@@ -429,3 +430,6 @@ command! -bang -nargs=* Rg
 
 " python
 nnoremap <F5> <Esc>:w<CR>:!clear;python %<CR>
+
+" terminal
+nnoremap <F2> :sh<cr>
