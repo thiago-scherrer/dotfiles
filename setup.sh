@@ -43,7 +43,10 @@ function systemUpdate() {
 			pcscd \
 			pcsclite \
 			powerline \
+			pulseaudio \
 			python-pip \
+			python-pipenv \
+			python-pipenv-to-requirements \
 			python3 \
 			python3-config \
 			ranger \
@@ -59,7 +62,6 @@ function systemUpdate() {
 			yubikey-manager-qt \
 			yubioath-desktop \
 			zip \
-			pulseaudio \
 		&& npm install --global yar \
 		&& systemctl enable cronie.service \
 		&& systemctl enable lightdm \
