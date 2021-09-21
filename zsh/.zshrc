@@ -12,11 +12,18 @@ plugins=(
   golang
   zsh-syntax-highlighting
   zsh-autosuggestions
+  python
+  pyenv
+  pylint
 )
 
-source $ZSH/oh-my-zsh.sh
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
 
+source $ZSH/oh-my-zsh.sh
 export PATH=$PATH:/usr/local/go/bin:/home/$USER/.local/bin:$HOME/go/bin/:$HOME/.tfenv/bin:/usr/games
+
 export GPG_TTY=$(tty)
 export VISUAL=/usr/bin/vim
 
