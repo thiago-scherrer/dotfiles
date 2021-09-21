@@ -128,6 +128,7 @@ function importConfig () {
 }
 
 function installPython () {
+	pip install flake8
 	curl https://pyenv.run | bash
 }
 
