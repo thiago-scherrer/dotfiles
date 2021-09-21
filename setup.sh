@@ -127,7 +127,12 @@ function importConfig () {
 	cp -rvT config ~/.config/
 }
 
+function installPython () {
+	curl https://pyenv.run | bash
+}
+
 systemUpdate
 zshSetup
 vimSetup
 tfSetup
+installPython
