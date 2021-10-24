@@ -35,6 +35,7 @@ Plug 'nanotech/jellybeans.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'nvie/vim-flake8'
 Plug 'pappasam/coc-jedi', { 'do': 'yarn install --frozen-lockfile && yarn build', 'branch': 'main' }
+Plug 'tell-k/vim-autopep8'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -430,6 +431,7 @@ command! -bang -nargs=* Rg
 
 " python
 nnoremap <F5> <Esc>:w<CR>:!clear;python %<CR>
+autocmd FileType python noremap <buffer> <F8> :call Autopep8()<CR>
 
 " terminal
 nnoremap <F2> :sh<cr>
