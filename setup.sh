@@ -2,76 +2,75 @@
 
 function systemUpdate() {
 	su -c '
-		pacman -Syu \
-		&& pacman -S \
-			TDM \
-			cmake \
-			community/prusa-slicer \
-			cron \
-			curl \
-			dmenu \
-			dunst \
-			extra/noto-fonts-extra \
-			firefox \
-			fzf \
-			gcc \
-			git \
-			github-cli \
-			htop \
-			i3-wm \
-			imagemagick \
-			ipython3 \
-			libgtk \
-			libncurses
-			light \
-			lightdm \
-			lightdm-gtk-greeter \
-			lxappearance \
-			lxappearance-obconf \
-			lxdm \
-			make \
-			nasm \
-			ncurses \
-			nitrogen \
-			node \
-			npm \
-			ntfs-3g \
-			ntp \
-			openvpn \
-			pavucontrol \
-			pcsc-tools \
-			pcscd \
-			pcsclite \
-			powerline \
-			pulseaudio \
-			python-pip \
-			python-pipenv \
-			python-pipenv-to-requirements \
-			python3 \
-			python3-config \
-			ranger \
-			reflector \
-			rg \
-			ruby \
-			terminator \
-			viewnior \
-			xclip \
-			xorg-server \
-			xterm \
-			yarn \
-			yubikey-manager-qt \
-			yubioath-desktop \
-			zip \
-		&& npm install --global yar \
-		&& systemctl enable cronie.service \
-		&& systemctl enable lightdm \
-		&& touch /etc/ntp.conf \
-		&& ntpd -q -g \
-		&& cp ntp/ntp.conf /etc/ntp.conf \
-		&& ntpd -q -g \
-		&& ln -sf /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
-		&& cp cron/cron /var/spool/cron/root
-	'
+		apt update \
+		&& apt install -y \
+			build-essential \
+		cmake \
+		curl \
+		evince \
+		exuberant-ctags \
+		feh \
+		fzf \
+		gimp \
+		git \
+		htop \
+		imagemagick \
+		irssi \
+		libavcodec-extra \
+		libboost-all-dev \
+		libboost-dev \
+		libboost-filesystem-dev \
+		libboost-filesystem-dev \
+		libboost-iostreams-dev \
+		libboost-locale-dev \
+		libboost-log-dev \
+		libboost-regex-dev \
+		libboost-thread-dev \
+		libcereal-dev \
+		libcurl4-openssl-dev \
+		libdbus-1-dev \
+		libeigen3-dev \
+		libfreetype-dev \
+		libgmpxx4ldbl \
+		libgtk-3-dev \
+		libgtk2.0-dev \
+		libncurses5-dev \
+		libncursesw5-dev \
+		libnlopt-cxx-dev \
+		libnlopt-dev \
+		libopenvdb-dev \
+		libsdl2-dev \
+		libtbb-dev \
+		libudev-dev \
+		libwxgtk3.0-gtk3-dev \
+		libz-dev libpng-dev \
+		lm-sensors \
+		nasm \
+		nodejs \
+		npm \
+		openvpn \
+		pkg-config \
+		python3-dev \
+		ranger \
+		ripgrep \
+		universal-ctags \
+		unzip \
+		x11-apps \
+		xclip \
+		xfce4-screenshooter \
+		xorg-dev \
+		zip \
+		zlib1g-dev \
+		zsh \
+	    terminator \
+	    ruby2.7 \
+	    ruby-dev \
+	    yubioath-desktop \
+		hsetroot \
+	    && npm install --global yar \
+	    && rm /usr/share/vim/vim82/ -rfv \
+	    && ln -s /usr/local/share/vim/vim82/ /usr/share/vim/'
+
 	cp .gitconfig ~/
 }
 
@@ -92,7 +91,7 @@ function vimSetup () {
 
 	git clone https://github.com/vim/vim vim_tmp
 	cd vim_tmp
-	su -c  'pacman -R vi*'
+	su -c  'apt remove -y vi*'
 	export VIMRUNTIMEDIR=/usr/share/vim/vim82
 	./configure --with-features=huge \
 		--enable-multibyte \
