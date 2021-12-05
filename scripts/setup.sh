@@ -48,6 +48,7 @@ function systemUpdate() {
 		nasm \
 		nodejs \
 		npm \
+		ntp \
 		openvpn \
 		pkg-config \
 		python3-dev \
