@@ -1,13 +1,12 @@
-#!/bin/bash
+#!/usr/bin/env sh
 
-function systemUpdate() {
+function systemUpdate () {
 	su -c '
 		apt update \
 		&& apt install -y \
 			build-essential \
 		cmake \
 		curl \
-		evince \
 		exuberant-ctags \
 		feh \
 		fzf \
@@ -15,7 +14,6 @@ function systemUpdate() {
 		git \
 		htop \
 		imagemagick \
-		irssi \
 		libavcodec-extra \
 		libboost-all-dev \
 		libboost-dev \
@@ -49,16 +47,13 @@ function systemUpdate() {
 		nodejs \
 		npm \
 		ntp \
-		openvpn \
+		podman \
 		pkg-config \
 		python3-dev \
-		ranger \
 		ripgrep \
 		universal-ctags \
 		unzip \
-		x11-apps \
 		xclip \
-		xfce4-screenshooter \
 		xorg-dev \
 		zip \
 		zlib1g-dev \
@@ -67,12 +62,9 @@ function systemUpdate() {
 	    ruby2.7 \
 	    ruby-dev \
 	    yubioath-desktop \
-		hsetroot \
-	    && npm install --global yar \
-	    && rm /usr/share/vim/vim82/ -rfv \
-	    && ln -s /usr/local/share/vim/vim82/ /usr/share/vim/'
+		hsetroot'
 
-	cp .gitconfig ~/
+		pip install https://github.com/containers/podman-compose/archive/devel.tar.gz
 }
 
 function zshSetup () {
@@ -87,53 +79,11 @@ function zshSetup () {
 
 }
 
-function vimSetup () {
-	mkdir -p ~/tmp
-
-	git clone https://github.com/vim/vim vim_tmp
-	cd vim_tmp
-	su -c  'apt remove -y vi*'
-	export VIMRUNTIMEDIR=/usr/share/vim/vim82
-	./configure --with-features=huge \
-		--enable-multibyte \
-        --enable-rubyinterp=yes \
-        --enable-python3interp=yes \
-        --with-python3-config-dir=$(python3-config --configdir) \
-        --enable-perlinterp=yes \
-        --enable-luainterp=yes \
-        --enable-gui=gtk2 \
-        --enable-cscope \
-		--enable-terminal
-	make -j2
-	su -c 'make install'
-
-	su -c 'npm install -g dockerfile-language-server-nodejs'
-	su -c 'gem install solargraph'
-
-	vim -c 'CocInstall -sync coc-json coc-html coc-css coc-docker coc-go coc-htmlcoc-json coc-pyright coc-sh coc-solargraph coc-sql coc-tsserver coc-yaml |q'
-
-	cd ..
-	rm -rf vim_tmp
-	cp vim/.vimrc ~/.vimrc
-}
-
 function tfSetup(){
 	git clone https://github.com/tfutils/tfenv.git ~/.tfenv
-}
-
-
-function importConfig () {
-	cp -rvT home ~/
-	cp -rvT config ~/.config/
-}
-
-function installPython () {
-	pip install flake8
-	curl https://pyenv.run | bash
+	sed -i 's#env bash#env zsh#g' /${USER}/.tfenv/bin/tfen
 }
 
 systemUpdate
 zshSetup
-vimSetup
 tfSetup
-installPython
