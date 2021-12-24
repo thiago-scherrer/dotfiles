@@ -20,7 +20,6 @@ function basicSetup () {
 		git \
 		github-cli \
 		go \
-		kops \
 		kubectl \
 		make \
 		musl-dev \
@@ -35,6 +34,10 @@ function basicSetup () {
 		zsh
 
 	npm install --global yar
+
+	git clone https://github.com/kubernetes/kops.git
+	cd kops/cmd/kops
+	go build -o /bin/kops
 }
 
 function vimSetup () {
@@ -54,7 +57,6 @@ function vimSetup () {
     make install
 
     npm install -g dockerfile-language-server-nodejs
-    gem install solargraph
 
     curl -sfLo ~/.vim/autoload/plug.vim --create-dirs \
       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
