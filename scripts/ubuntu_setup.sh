@@ -64,7 +64,10 @@ function systemUpdate () {
 	    yubioath-desktop \
 		hsetroot'
 
-		pip install https://github.com/containers/podman-compose/archive/devel.tar.gz
+		pip3 install --user 'podman-compose<1.0'
+
+		git clone https://github.com/zsh-users/zsh-syntax-highlighting.git \
+			/${HOME}/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 }
 
 function zshSetup () {
@@ -81,9 +84,18 @@ function zshSetup () {
 
 function tfSetup(){
 	git clone https://github.com/tfutils/tfenv.git ~/.tfenv
-	sed -i 's#env bash#env zsh#g' /${USER}/.tfenv/bin/tfen
+	sed -i 's#env bash#env zsh#g' /${HOME}/.tfenv/bin/tfen
+}
+
+function pythonSetup(){
+	git clone https://github.com/pyenv/pyenv.git /${HOME}/.pyenv
+	cd /${HOME}/.pyenv
+    src/configure
+    make -C src
+    git clone https://github.com/pyenv/pyenv-virtualenv.git /${HOME}/.pyenv/plugins/pyenv-virtualenv
 }
 
 systemUpdate
 zshSetup
 tfSetup
+pythonSetup
