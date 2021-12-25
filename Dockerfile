@@ -10,7 +10,6 @@ RUN container_setup.sh
 COPY ./vim/coc-settings.json /${USER}/.vim/coc-settings.json
 COPY ./zsh/zshrc /${USER}/.zshrc
 COPY ./home/ripgreprc /${USER}/.ripgreprc
-COPY ./etc/ntp.conf /etc/ntp.conf
 
 WORKDIR /root/workspace
 
