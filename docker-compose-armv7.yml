@@ -3,7 +3,7 @@ version: "3"
 services:
   vim-docker:
     hostname: "vim-docker"
-    image: "sofdg2/vim-docker:arm"
+    image: "sofdg2/vim-docker:armv7"
     environment:
       DISPLAY: :0
     volumes:
