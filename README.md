@@ -31,6 +31,6 @@ podman-compose -f docker-compose-armv7.yml run vim-docker
 
 For amd64
 ```sh
-podman-compose -f docker-compose-amd.yml run vim-docker
+podman-compose -f docker-compose-amd64.yml run vim-docker
 ```
 
