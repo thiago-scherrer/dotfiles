@@ -9,6 +9,7 @@ services:
     volumes:
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
+      - ./bin/kops_amd64:/bin/kops
 
       - type: bind
         source: ${HOME}
