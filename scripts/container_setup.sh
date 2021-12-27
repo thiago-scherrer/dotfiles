@@ -26,6 +26,7 @@ function basicSetup () {
 		ncurses-dev \
 		nodejs \
 		npm \
+		openssh-client \
 		py3-pip \
 		ripgrep \
 		ruby \
