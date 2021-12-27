@@ -19,18 +19,18 @@ services:
         source: /tmp/.X11-unix
         target: /tmp/.X11-unix
 
-#      - type: bind
-#        source: ${HOME}/.gitconfig
-#        target: /root/.gitconfig
+      - type: bind
+        source: ${HOME}/.gitconfig
+        target: /root/.gitconfig
 
-#      - type: bind
-#        source: ${HOME}/.gnupg
-#        target: /root/.gnupg
+      - type: bind
+        source: ${HOME}/.gnupg
+        target: /root/.gnupg
 
-#      - type: bind
-#        source: ${HOME}/.config/gh
-#        target: /root/.config/gh
+      - type: bind
+        source: ${HOME}/.config/gh
+        target: /root/.config/gh
 
-#      - type: bind
-#        source: ${HOME}/.ssh
-#        target: /root/.ssh
+      - type: bind
+        source: ${HOME}/.ssh
+        target: /root/.ssh
