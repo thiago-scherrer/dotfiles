@@ -73,7 +73,6 @@ function vimSetup () {
 
 function terraformSetup () {
     git clone https://github.com/tfutils/tfenv.git /${USER}/.tfenv
-	sed -i 's#env bash#env zsh#g' /${USER}/.tfenv/bin/tfenv
 }
 
 function pythonSetup () {
@@ -81,7 +80,6 @@ function pythonSetup () {
 
 	git clone https://github.com/pyenv/pyenv.git /${USER}/.pyenv
     cd /${USER}/.pyenv
-	sed -i 's#env bash#env zsh#g' src/configure
     src/configure
     make -C src
     git clone https://github.com/pyenv/pyenv-virtualenv.git \
