@@ -62,6 +62,8 @@ function vimSetup () {
 
 	mkdir -p /${USER}/tmp/
 
+	go get golang.org/x/tools/gopls@latest
+
     mkdir -p /${USER}/.config/coc
 
     vim +':silent :CocInstall -sync coc-json coc-html coc-css coc-docker coc-go coc-htmlcoc-json coc-pyright coc-sh coc-solargraph coc-sql coc-tsserver coc-yaml --sync' +qa
@@ -95,6 +97,9 @@ function ohMyZshSetup () {
 
 	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git \
 		/${USER}/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+
+	git clone https://github.com/zsh-users/zsh-autosuggestions \
+		${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 }
 
 basicSetup
