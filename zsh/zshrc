@@ -5,13 +5,14 @@ export UPDATE_ZSH_DAYS=1
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 plugins=(
   git
-  ubuntu
-  nmap
   golang
-  zsh-syntax-highlighting
-  python
+  nmap
   pyenv
   pylint
+  python
+  ubuntu
+  zsh-autosuggestions
+  zsh-syntax-highlighting
 )
 
 export PATH=$PATH:/$HOME/.pyenv/bin:/usr/local/go/bin
