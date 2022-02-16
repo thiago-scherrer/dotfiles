@@ -1,8 +1,7 @@
 #!/usr/bin/env sh
 
 function systemUpdate () {
-	su -c '
-		apt update \
+	sudo apt update \
 		&& apt install -y \
 			build-essential \
 		cmake \
@@ -62,9 +61,7 @@ function systemUpdate () {
 	    ruby2.7 \
 	    ruby-dev \
 	    yubioath-desktop \
-		hsetroot'
-
-		pip3 install --user 'podman-compose<1.0'
+		hsetroot
 
 		git clone https://github.com/zsh-users/zsh-syntax-highlighting.git \
 			/${HOME}/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
