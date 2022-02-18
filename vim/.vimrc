@@ -422,6 +422,12 @@ let g:go_auto_sameids = 0
 let g:go_auto_type_info = 1
 let g:go_fmt_autosave = 0
 set backspace=indent,eol,start
+autocmd BufEnter *.go nmap <space>i  <Plug>(go-info)
+autocmd BufEnter *.go nmap <space>ii  <Plug>(go-implements)
+autocmd BufEnter *.go nmap <space>ci  <Plug>(go-describe)
+autocmd BufEnter *.go nmap <space>cc  <Plug>(go-callers)
+nmap <C-a> <C-o>
+nmap <C-d> <Plug>(coc-definition)
 
 " fzf
 command! -bang -nargs=* Rg
