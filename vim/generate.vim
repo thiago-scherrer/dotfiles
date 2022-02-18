@@ -400,6 +400,12 @@ let g:go_highlight_space_tab_error = 0
 let g:go_highlight_array_whitespace_error = 0
 let g:go_highlight_trailing_whitespace_error = 0
 let g:go_highlight_extra_types = 1
+autocmd BufEnter *.go nmap <space>i  <Plug>(go-info)
+autocmd BufEnter *.go nmap <space>ii  <Plug>(go-implements)
+autocmd BufEnter *.go nmap <space>ci  <Plug>(go-describe)
+autocmd BufEnter *.go nmap <space>cc  <Plug>(go-callers)
+nmap <C-a> <C-o>
+nmap <C-d> <Plug>(coc-definition)
 
 autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4 softtabstop=4
 
