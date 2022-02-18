@@ -7,7 +7,7 @@ let g:vim_bootstrap_frams = ""
 "*****************************************************************************
 "" Plug install packages
 "*****************************************************************************
-"Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
+Plug 'fatih/vim-go', {'do': ':GoInstallBinaries'}
 Plug 'Raimondi/delimitMate'
 Plug 'Shougo/vimproc.vim', {'do': g:make}
 Plug 'Yggdroot/indentLine'
