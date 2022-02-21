@@ -13,4 +13,6 @@ COPY ./home/ripgreprc /${USER}/.ripgreprc
 
 WORKDIR /root/workspace
 
+ENTRYPOINT [ "gpg-agent", "--daemon" ]
+
 CMD [ "zsh" ]

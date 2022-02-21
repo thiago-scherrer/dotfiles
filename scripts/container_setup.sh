@@ -16,6 +16,8 @@ function basicSetup () {
 		ctags \
 		curl \
 		fzf \
+		gpg \
+		gpg-agent \
 		gcc \
 		git \
 		github-cli \
