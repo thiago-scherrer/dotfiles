@@ -13,14 +13,14 @@ Plug 'Shougo/vimproc.vim', {'do': g:make}
 Plug 'Yggdroot/indentLine'
 Plug 'airblade/vim-gitgutter'
 Plug 'dense-analysis/ale'
-Plug 'ecomba/vim-ruby-refactoring', {'tag': 'main'}
+"Plug 'ecomba/vim-ruby-refactoring', {'tag': 'main'}
 Plug 'editor-bootstrap/vim-bootstrap-updater'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'hashivim/vim-terraform'
 Plug 'honza/vim-snippets'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
-Plug 'majutsushi/tagbar'
+"Plug 'majutsushi/tagbar'
 Plug 'mbbill/undotree'
 Plug 'mg979/vim-visual-multi'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -28,12 +28,12 @@ Plug 'nvie/vim-flake8'
 Plug 'pappasam/coc-jedi', { 'do': 'yarn install --frozen-lockfile && yarn build', 'branch': 'main' }
 Plug 'tell-k/vim-autopep8'
 Plug 'thoughtbot/vim-rspec'
-Plug 'tomasiser/vim-code-dark'
+"Plug 'tomasiser/vim-code-dark'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-projectionist'
-Plug 'tpope/vim-rails'
-Plug 'tpope/vim-rake'
+"Plug 'tpope/vim-rails'
+"Plug 'tpope/vim-rake'
 Plug 'tpope/vim-rhubarb' " required by fugitive to :Gbrowse
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -41,7 +41,7 @@ Plug 'vim-scripts/CSApprox'
 Plug 'vim-scripts/grep.vim'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-session'
-
+Plug 'morhetz/gruvbox'
 
 "*****************************************************************************
 "*****************************************************************************
@@ -719,3 +719,30 @@ function! s:show_documentation()
     execute '!' . &keywordprg . " " . expand('<cword>')
   endif
 endfunction
+
+colorscheme gruvbox
+set background=dark
+highlight Normal ctermbg=None
+highlight nonText ctermbg=None
+highlight clear LineNr
+highlight clear CursorLineNr
+highlight clear SignColumn
+highlight GitGutterAdd ctermfg=green
+highlight GitGutterChange ctermfg=yellow
+highlight GitGutterDelete ctermfg=red
+highlight GitGutterChangeDelete ctermfg=yellow
+highlight ALEErrorSign ctermfg=red
+highlight ALEWarningSign ctermfg=red
+
+highlight link CocErrorSign ALEErrorSign
+highlight link CocWarningSign ALEWarningSign
+highlight link CocInfoSign ALEWarningSign
+highlight link ALEInfoSign ALEWarningSign
+highlight link CocDiagnosticsError Normal
+highlight link CocDiagnosticsWarning Normal
+highlight link CocDiagnosticsInfo Normal
+highlight link CocSelectedText Normal
+highlight link CocErrorVirtualText Normal
+highlight link CocWarningVirtualText Normal
+highlight link CocInfoVirtualText Normal
+highlight link cError Normal

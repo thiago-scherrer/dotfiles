@@ -70,8 +70,6 @@ function vimSetup () {
 
     vim +':silent :CocInstall -sync coc-json coc-html coc-css coc-docker coc-go coc-htmlcoc-json coc-pyright coc-sh coc-solargraph coc-sql coc-tsserver coc-yaml --sync' +qa
 
-    echo 'colorscheme codedark' >> /${USER}/.vimrc
-
     ln -s /usr/local/bin/vim /usr/bin/vim
 }
 
