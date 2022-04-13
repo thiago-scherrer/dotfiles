@@ -13,14 +13,12 @@ Plug 'Shougo/vimproc.vim', {'do': g:make}
 Plug 'Yggdroot/indentLine'
 Plug 'airblade/vim-gitgutter'
 Plug 'dense-analysis/ale'
-"Plug 'ecomba/vim-ruby-refactoring', {'tag': 'main'}
 Plug 'editor-bootstrap/vim-bootstrap-updater'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'hashivim/vim-terraform'
 Plug 'honza/vim-snippets'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
-"Plug 'majutsushi/tagbar'
 Plug 'mbbill/undotree'
 Plug 'mg979/vim-visual-multi'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -28,12 +26,9 @@ Plug 'nvie/vim-flake8'
 Plug 'pappasam/coc-jedi', { 'do': 'yarn install --frozen-lockfile && yarn build', 'branch': 'main' }
 Plug 'tell-k/vim-autopep8'
 Plug 'thoughtbot/vim-rspec'
-"Plug 'tomasiser/vim-code-dark'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-projectionist'
-"Plug 'tpope/vim-rails'
-"Plug 'tpope/vim-rake'
 Plug 'tpope/vim-rhubarb' " required by fugitive to :Gbrowse
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -177,7 +172,7 @@ if exists("*fugitive#statusline")
 endif
 
 " vim-airline
-let g:airline_theme = 'codedark'
+let g:airline_theme = 'gruvbox'
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
@@ -720,7 +715,6 @@ function! s:show_documentation()
   endif
 endfunction
 
-colorscheme gruvbox
 set background=dark
 highlight Normal ctermbg=None
 highlight nonText ctermbg=None
