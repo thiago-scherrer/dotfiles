@@ -22,6 +22,7 @@ function basicSetup () {
 		git \
 		github-cli \
 		go \
+		jq \
 		kubectl \
 		make \
 		musl-dev \
@@ -64,7 +65,7 @@ function vimSetup () {
 
 	mkdir -p /${USER}/tmp/
 
-	go get golang.org/x/tools/gopls@latest
+	go install golang.org/x/tools/gopls@latest
 
     mkdir -p /${USER}/.config/coc
 
