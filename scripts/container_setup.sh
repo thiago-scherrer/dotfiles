@@ -105,8 +105,17 @@ function ohMyZshSetup () {
 		${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 }
 
+function gcloudSetup () {
+	curl https://dl.google.com/dl/cloudsdk/release/google-cloud-sdk.tar.gz > /tmp/google-cloud-sdk.tar.gz \
+	&& mkdir -p /usr/local/gcloud \
+	&& tar -C /usr/local/gcloud -xvf /tmp/google-cloud-sdk.tar.gz \
+	&& /usr/local/gcloud/google-cloud-sdk/install.sh
+
+}
+
 basicSetup
 vimSetup
 terraformSetup
 pythonSetup
 ohMyZshSetup
+gcloudSetup
