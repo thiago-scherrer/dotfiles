@@ -8,6 +8,11 @@ sections:
     description: Meu dotfiles
     icon: fab fa-github
     url: https://github.com/thiago-scherrer/dotfiles
+  - title: Projects
+    description: Projects
+    icon: fab fa-github
+    url: https://github.com/users/thiago-scherrer/projects/1
+
   - title: Proton
     description: Proton
     icon: favicon
