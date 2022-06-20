@@ -1,0 +1,34 @@
+pageInfo:
+  title: 42
+sections:
+- name: utils
+  icon: far fa-rocket
+  items:
+  - title: Dotfiles
+    description: Meu dotfiles
+    icon: fab fa-github
+    url: https://github.com/thiago-scherrer/dotfiles
+  - title: Proton
+    description: Proton
+    icon: favicon
+    url: https://mail.proton.me
+  - title: Bitwarden
+    description: Bitwarden
+    icon: favicon
+    url: https://vault.bitwarden.com/#/login
+
+- name: Local Services
+  items:
+  - title: Claro
+    icon: http://192.168.0.1/assets/img/logo-net.png
+    url: http://192.168.0.1/
+  - title: Pi hole
+    icon: http://pihole/admin/img/logo.svg
+    url: http://pihole/admin/
+  - title: Deluge
+    icon: ':package:'
+    url: http://octo:8112/
+  - title: Impressora
+    icon: ':printer:'
+    url: http://octo:631/
+
