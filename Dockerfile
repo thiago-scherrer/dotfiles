@@ -16,3 +16,5 @@ WORKDIR /root/workspace
 ENTRYPOINT [ "gpg-agent", "--daemon" ]
 
 CMD [ "zsh" ]
+
+EXPOSE 8000
