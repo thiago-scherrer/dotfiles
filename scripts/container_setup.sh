@@ -111,8 +111,11 @@ function gcloudSetup () {
 	&& /usr/local/gcloud/google-cloud-sdk/install.sh \
 	&& /usr/local/gcloud/google-cloud-sdk/bin/gcloud --quiet components install gke-gcloud-auth-plugin \
 	&& /usr/local/gcloud/google-cloud-sdk/bin/gcloud --quiet components install kubectl
+}
 
-
+function helmInstall () {
+	export VERIFY_CHECKSUM=false
+	curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
 }
 
 basicSetup
@@ -121,3 +124,4 @@ terraformSetup
 pythonSetup
 ohMyZshSetup
 gcloudSetup
+helmInstall

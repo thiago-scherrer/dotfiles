@@ -4,6 +4,10 @@ services:
   vim-docker:
     hostname: "vim-docker"
     image: "sofdg2/vim-docker:latest"
+    ports:
+      - "8080"
+      - "8081"
+      - "8082"
     environment:
       DISPLAY: :0
     volumes:
@@ -31,3 +35,4 @@ services:
       - type: bind
         source: ${HOME}/.ssh
         target: /root/.ssh
+
