@@ -13,6 +13,7 @@ function basicSetup () {
 	apk add --repository=http://dl-cdn.alpinelinux.org/alpine/edge/testing/ \
 		aws-cli \
 		bash \
+		bind-tools \
 		ctags \
 		curl \
 		fzf \
