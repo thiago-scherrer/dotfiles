@@ -32,6 +32,7 @@ EDITOR='vim'
 
 export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
 export FZF_DEFAULT_COMMAND='rg -l ""'
+export CLOUDSDK_PYTHON_SITEPACKAGES=1
 
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] \
   && printf %s "${HOME}/.nvm" \
