@@ -35,6 +35,7 @@ function basicSetup () {
 		ruby \
 		ruby-dev \
 		xclip \
+		yarn \
 		zsh
 
 	npm install --global yar
