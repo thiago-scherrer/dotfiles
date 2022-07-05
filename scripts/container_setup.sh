@@ -111,7 +111,7 @@ function gcloudSetup () {
 	&& mkdir -p /usr/local/gcloud \
 	&& tar -C /usr/local/gcloud -xvf /tmp/google-cloud-sdk.tar.gz \
 	&& /usr/local/gcloud/google-cloud-sdk/install.sh \
-	&& /usr/local/gcloud/google-cloud-sdk/bin/gcloud --quiet components install gke-gcloud-auth-plugin kubectl alpha \
+	&& /usr/local/gcloud/google-cloud-sdk/bin/gcloud --quiet components install gke-gcloud-auth-plugin kubectl alpha beta \
 	&& pip3 install grpcio
 }
 
