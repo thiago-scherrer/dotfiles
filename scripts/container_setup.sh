@@ -115,9 +115,20 @@ function gcloudSetup () {
 	&& pip3 install grpcio
 }
 
-function helmInstall () {
+function k8s () {
 	export VERIFY_CHECKSUM=false
 	curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
+
+	git clone https://github.com/derailed/k9s.git \
+	&& cd k9s && go install && cd .. && rm -rfv k9s
+
+	git clone https://github.com/ahmetb/kubectx /opt/kubectx \
+	&& ln -s /opt/kubectx/kubectx /usr/local/bin/kubectx \
+	&& ln -s /opt/kubectx/kubens /usr/local/bin/kubens \
+	&& mkdir -p ~/.oh-my-zsh/completions \
+	&& chmod -R 755 ~/.oh-my-zsh/completions \
+	&& ln -s /opt/kubectx/completion/_kubectx.zsh ~/.oh-my-zsh/completions/_kubectx.zsh \
+	&& ln -s /opt/kubectx/completion/_kubens.zsh ~/.oh-my-zsh/completions/_kubens.zsh 
 }
 
 basicSetup
@@ -126,4 +137,4 @@ terraformSetup
 pythonSetup
 ohMyZshSetup
 gcloudSetup
-helmInstall
+k8s
