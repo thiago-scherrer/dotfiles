@@ -129,6 +129,12 @@ function k8s () {
 	&& chmod -R 755 ~/.oh-my-zsh/completions \
 	&& ln -s /opt/kubectx/completion/_kubectx.zsh ~/.oh-my-zsh/completions/_kubectx.zsh \
 	&& ln -s /opt/kubectx/completion/_kubens.zsh ~/.oh-my-zsh/completions/_kubens.zsh 
+
+	export istio_version=1.14.1
+
+	wget https://github.com/istio/istio/releases/download/${istio_version}/istioctl-${istio_version}-linux-amd64.tar.gz  \
+	&& tar -C /bin/ -xvf istioctl-${istio_version}-linux-amd64.tar.gz \
+	&& rm -f istioctl-${istio_version}-linux-amd64.tar.gz
 }
 
 basicSetup
