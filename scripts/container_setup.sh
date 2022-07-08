@@ -11,7 +11,6 @@ function basicSetup () {
 
 	apk update
 	apk add --repository=http://dl-cdn.alpinelinux.org/alpine/edge/testing/ \
-		aws-cli \
 		bash \
 		bind-tools \
 		ctags \
@@ -36,7 +35,8 @@ function basicSetup () {
 		ruby-dev \
 		xclip \
 		yarn \
-		zsh
+		zsh \
+		zip
 
 	npm install --global yar
 }
@@ -119,6 +119,8 @@ function k8s () {
 	export VERIFY_CHECKSUM=false
 	curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
 
+	helm plugin install https://github.com/quintush/helm-unittest
+
 	git clone https://github.com/derailed/k9s.git \
 	&& cd k9s && go install && cd .. && rm -rfv k9s
 
@@ -128,13 +130,23 @@ function k8s () {
 	&& mkdir -p ~/.oh-my-zsh/completions \
 	&& chmod -R 755 ~/.oh-my-zsh/completions \
 	&& ln -s /opt/kubectx/completion/_kubectx.zsh ~/.oh-my-zsh/completions/_kubectx.zsh \
-	&& ln -s /opt/kubectx/completion/_kubens.zsh ~/.oh-my-zsh/completions/_kubens.zsh 
+	&& ln -s /opt/kubectx/completion/_kubens.zsh ~/.oh-my-zsh/completions/_kubens.zsh
 
 	export istio_version=1.14.1
 
 	wget https://github.com/istio/istio/releases/download/${istio_version}/istioctl-${istio_version}-linux-amd64.tar.gz  \
 	&& tar -C /bin/ -xvf istioctl-${istio_version}-linux-amd64.tar.gz \
 	&& rm -f istioctl-${istio_version}-linux-amd64.tar.gz
+}
+
+function awsInstall () {
+	export AWS_CLI_VER=2.1.39
+
+	apk add --no-cache gcompat \
+	&& curl -s https://awscli.amazonaws.com/awscli-exe-linux-x86_64-${AWS_CLI_VER}.zip -o awscliv2.zip \
+	&& unzip awscliv2.zip \
+	&& ./aws/install \
+	&& rm awscliv2.zip
 }
 
 basicSetup
@@ -144,3 +156,4 @@ pythonSetup
 ohMyZshSetup
 gcloudSetup
 k8s
+awsInstall
