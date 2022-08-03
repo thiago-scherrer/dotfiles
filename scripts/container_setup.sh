@@ -63,16 +63,17 @@ function vimSetup () {
       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
     vim +':silent :PlugInstall --sync' +qa
-
-	mkdir -p /${USER}/tmp/
-
-	go install golang.org/x/tools/gopls@latest
+    
+    mkdir -p /${USER}/tmp/
+    
+    go install golang.org/x/tools/gopls@latest
 
     mkdir -p /${USER}/.config/coc
 
-    vim +':silent :CocInstall -sync coc-json coc-html coc-css coc-docker coc-go coc-htmlcoc-json coc-pyright coc-sh coc-solargraph coc-sql coc-tsserver coc-yaml --sync' +qa
+    vim +':silent :CocInstall -sync coc-jedi coc-json coc-html coc-css coc-docker coc-go coc-htmlcoc-json coc-pyright coc-sh coc-solargraph coc-sql coc-tsserver coc-yaml --sync' +qa
 
-    echo 'colorscheme gruvbox' >> /${USER}/.vimrc
+    cat /opt/vim_post_install >> /${USER}/.vimrc
+    rm /opt/vim_post_install
 
     ln -s /usr/local/bin/vim /usr/bin/vim
 }
