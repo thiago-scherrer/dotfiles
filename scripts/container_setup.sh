@@ -25,6 +25,7 @@ function basicSetup () {
 		jq \
 		make \
 		musl-dev \
+		ncurses \
 		ncurses-dev \
 		nodejs \
 		npm \
@@ -63,9 +64,9 @@ function vimSetup () {
       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
     vim +':silent :PlugInstall --sync' +qa
-    
+
     mkdir -p /${USER}/tmp/
-    
+
     go install golang.org/x/tools/gopls@latest
 
     mkdir -p /${USER}/.config/coc
