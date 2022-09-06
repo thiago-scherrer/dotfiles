@@ -5,10 +5,11 @@ function basicSetup () {
 	pkg update
 	pkg install \
 		gh \
+		gnupg \
 		golang \
+		kubectl \
 		nodejs-lts \
 		python \
-		kubectl \
 	&& npm install --global yar
 }
 
