@@ -10,6 +10,7 @@ function basicSetup () {
 		kubectl \
 		nodejs-lts \
 		python \
+		ripgrep \
 	&& npm install --global yar
 }
 
