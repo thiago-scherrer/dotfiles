@@ -1,5 +1,3 @@
-" vim-bootstrap 2021-12-12 14:27:17
-
 let g:make = 'make'
 call plug#begin('~/.vim/plugged')
 let g:vim_bootstrap_frams = ""
@@ -11,7 +9,6 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'Raimondi/delimitMate'
 Plug 'Shougo/vimproc.vim', {'do': g:make}
 Plug 'Yggdroot/indentLine'
-Plug 'airblade/vim-gitgutter'
 Plug 'dense-analysis/ale'
 Plug 'editor-bootstrap/vim-bootstrap-updater'
 Plug 'editorconfig/editorconfig-vim'
@@ -23,16 +20,13 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'nvie/vim-flake8'
 Plug 'tell-k/vim-autopep8'
 Plug 'thoughtbot/vim-rspec'
-Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-rhubarb' " required by fugitive to :Gbrowse
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/CSApprox'
-Plug 'vim-scripts/grep.vim'
-Plug 'xolox/vim-misc'
-Plug 'xolox/vim-session'
+"Plug 'xolox/vim-misc'
+"Plug 'xolox/vim-session'
 Plug 'morhetz/gruvbox'
 
 "*****************************************************************************
@@ -288,30 +282,6 @@ noremap <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 
 "" Opens a tab edit command with the path of the currently edited file filled
 noremap <Leader>te :tabe <C-R>=expand("%:p:h") . "/" <CR>
-
-"" fzf.vim
-set wildmode=list:longest,list:full
-set wildignore+=*.o,*.obj,.git,*.rbc,*.pyc,__pycache__
-let $FZF_DEFAULT_COMMAND =  "find * -path '*/\.*' -prune -o -path 'node_modules/**' -prune -o -path 'target/**' -prune -o -path 'dist/**' -prune -o  -type f -print -o -type l -print 2> /dev/null"
-
-" The Silver Searcher
-if executable('ag')
-  let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
-  set grepprg=ag\ --nogroup\ --nocolor
-endif
-
-" ripgrep
-if executable('rg')
-  let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --follow --glob "!.git/*"'
-  set grepprg=rg\ --vimgrep
-  command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
-endif
-
-cnoremap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
-nnoremap <silent> <leader>b :Buffers<CR>
-nnoremap <silent> <leader>e :FZF -m<CR>
-"Recovery commands from history through FZF
-nmap <leader>y :History:<CR>
 
 " snippets
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -582,12 +552,6 @@ else
   let g:airline_symbols.linenr = ''
 endif
 
-" fzf
-command! -bang -nargs=* Rg
-  \ call fzf#vim#grep(
-  \ "rg --column --line-number --no-heading --color=always --smart-case " .
-  \ <q-args>, 1, fzf#vim#with_preview(), <bang>0)
-
 " python
 nnoremap <F5> <Esc>:w<CR>:!clear;python %<CR>
 autocmd FileType python noremap <buffer> <F8> :call Autopep8()<CR>
@@ -721,10 +685,6 @@ highlight nonText ctermbg=None
 highlight clear LineNr
 highlight clear CursorLineNr
 set signcolumn=yes
-highlight GitGutterAdd ctermfg=green
-highlight GitGutterChange ctermfg=yellow
-highlight GitGutterDelete ctermfg=red
-highlight GitGutterChangeDelete ctermfg=yellow
 highlight ALEErrorSign ctermfg=red
 highlight ALEWarningSign ctermfg=red
 

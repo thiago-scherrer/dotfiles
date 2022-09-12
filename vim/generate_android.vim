@@ -6,7 +6,6 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'Raimondi/delimitMate'
 Plug 'Shougo/vimproc.vim', {'do': g:make}
 Plug 'Yggdroot/indentLine'
-Plug 'airblade/vim-gitgutter'
 Plug 'dense-analysis/ale'
 Plug 'editor-bootstrap/vim-bootstrap-updater'
 Plug 'editorconfig/editorconfig-vim'
@@ -22,7 +21,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb' " required by fugitive to :Gbrowse
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'xolox/vim-misc'
 Plug 'xolox/vim-session'
 
 call plug#end()
@@ -601,10 +599,6 @@ highlight nonText ctermbg=None
 highlight clear LineNr
 highlight clear CursorLineNr
 set signcolumn=yes
-highlight GitGutterAdd ctermfg=green
-highlight GitGutterChange ctermfg=yellow
-highlight GitGutterDelete ctermfg=red
-highlight GitGutterChangeDelete ctermfg=yellow
 highlight ALEErrorSign ctermfg=red
 highlight ALEWarningSign ctermfg=red
 
