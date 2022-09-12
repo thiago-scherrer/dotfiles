@@ -75,11 +75,7 @@ set smartcase
 
 set fileformats=unix,dos,mac
 
-if exists('$SHELL')
-    set shell=$SHELL
-else
-    set shell=/bin/sh
-endif
+set shell=/bin/sh
 
 " session management
 let g:session_directory = "~/.vim/session"
