@@ -71,7 +71,7 @@ function vimSetup () {
 
     mkdir -p /${USER}/.config/coc
 
-    vim +':silent :CocInstall -sync coc-jedi coc-json coc-html coc-css coc-docker coc-go coc-htmlcoc-json coc-pyright coc-sh coc-solargraph coc-sql coc-tsserver coc-yaml --sync' +qa
+    vim +':silent :CocInstall -sync coc-jedi coc-json coc-html coc-css coc-docker coc-go coc-htmlcoc-json coc-pyright coc-sh coc-solargraph coc-sql coc-tsserver --sync' +qa
 
     cat /opt/vim_post_install >> /${USER}/.vimrc
     rm /opt/vim_post_install
