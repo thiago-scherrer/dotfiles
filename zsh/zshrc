@@ -16,7 +16,7 @@ plugins=(
 )
 
 export PATH=$PATH:/$HOME/.pyenv/bin:/usr/local/go/bin
-export PATH=$PATH:$HOME/.local/bin:$HOME/go/bin/:$HOME/.tfenv/bin:/usr/games
+export PATH=$PATH:$HOME/.local/bin:$HOME/go/bin/:$HOME/.tfenv/bin:/usr/games:${KREW_ROOT:-$HOME/.krew}/bin
 export PATH=$PATH:/usr/local/gcloud/google-cloud-sdk/bin
 export PYENV_ROOT="$HOME/.pyenv/shims"
 export PATH="$PYENV_ROOT/bin:$PATH"
@@ -27,6 +27,8 @@ source $HOME/.oh-my-zsh/oh-my-zsh.sh
 
 export GPG_TTY=$(tty)
 export VISUAL=/usr/bin/vim
+
+export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 
 EDITOR='vim'
 
