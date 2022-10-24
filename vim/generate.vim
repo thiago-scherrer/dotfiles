@@ -11,7 +11,7 @@ Plug 'Shougo/vimproc.vim', {'do': g:make}
 Plug 'Yggdroot/indentLine'
 Plug 'dense-analysis/ale'
 Plug 'editor-bootstrap/vim-bootstrap-updater'
-"Plug 'editorconfig/editorconfig-vim'
+Plug 'editorconfig/editorconfig-vim'
 Plug 'hashivim/vim-terraform'
 Plug 'honza/vim-snippets'
 Plug 'mbbill/undotree'

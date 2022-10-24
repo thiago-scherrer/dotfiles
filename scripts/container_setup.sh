@@ -45,7 +45,7 @@ function basicSetup () {
 function vimSetup () {
 	init
 
-	git clone https://github.com/vim/vim
+	git clone https://github.com/vim/vim -b v9.0.0804
 	cd vim
     ./configure \
 		--disable-netbeans \

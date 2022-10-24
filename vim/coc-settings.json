@@ -15,7 +15,8 @@
         "scss",
         "sh",
         "sql",
-        "yaml"
+        "yaml",
+	"json"
     ],
     "languageserver": {
         "golang": {
