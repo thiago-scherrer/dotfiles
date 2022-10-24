@@ -87,7 +87,7 @@ function terraformSetup () {
 function pythonSetup () {
 	init
 
-	git clone https://github.com/pyenv/pyenv.git /${USER}/.pyenv
+    git clone https://github.com/pyenv/pyenv.git /${USER}/.pyenv
     cd /${USER}/.pyenv
     src/configure
     make -C src
@@ -151,8 +151,8 @@ function k8s () {
 	  curl -fsSLO "https://github.com/kubernetes-sigs/krew/releases/latest/download/${KREW}.tar.gz" &&
 	  tar zxvf "${KREW}.tar.gz" &&
 	  ./"${KREW}" install krew
-	  kubectl-krew install tree
 	)
+	~/.krew/bin/kubectl-krew install tree
 }
 
 function awsInstall () {
@@ -166,10 +166,10 @@ function awsInstall () {
 }
 
 basicSetup
-vimSetup
 terraformSetup
 pythonSetup
 ohMyZshSetup
 gcloudSetup
 k8s
 awsInstall
+vimSetup
