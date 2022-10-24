@@ -43,10 +43,10 @@ function basicSetup () {
 }
 
 function vimSetup () {
-	init
+    init
 
-	git clone https://github.com/vim/vim
-	cd vim
+     git clone https://github.com/vim/vim
+     cd vim
     ./configure \
 		--disable-netbeans \
         --enable-multibyte \
@@ -63,15 +63,16 @@ function vimSetup () {
     curl -sfLo ~/.vim/autoload/plug.vim --create-dirs \
       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-    vim +':silent :PlugInstall --sync' +qa
+    go install golang.org/x/tools/gopls@latest
+
+    /usr/local/bin/vim +':silent :PlugInstall --sync' +qa
 
     mkdir -p /${USER}/tmp/
 
-    go install golang.org/x/tools/gopls@latest
 
     mkdir -p /${USER}/.config/coc
 
-    vim +':silent :CocInstall -sync coc-jedi coc-json coc-html coc-css coc-docker coc-go coc-htmlcoc-json coc-pyright coc-sh coc-solargraph coc-sql coc-tsserver --sync' +qa
+    /usr/local/bin/vim +':silent :CocInstall -sync coc-jedi coc-json coc-html coc-css coc-docker coc-go coc-htmlcoc-json coc-pyright coc-sh coc-solargraph coc-sql coc-tsserver --sync' +qa
 
     cat /opt/vim_post_install >> /${USER}/.vimrc
     rm /opt/vim_post_install
@@ -115,6 +116,8 @@ function gcloudSetup () {
 	&& /usr/local/gcloud/google-cloud-sdk/install.sh \
 	&& /usr/local/gcloud/google-cloud-sdk/bin/gcloud --quiet components install gke-gcloud-auth-plugin kubectl alpha beta \
 	&& pip3 install grpcio
+
+	ln -s /usr/local/gcloud/google-cloud-sdk/bin/kubectl /bin/kubectl
 }
 
 function k8s () {
@@ -148,10 +151,8 @@ function k8s () {
 	  curl -fsSLO "https://github.com/kubernetes-sigs/krew/releases/latest/download/${KREW}.tar.gz" &&
 	  tar zxvf "${KREW}.tar.gz" &&
 	  ./"${KREW}" install krew
+	  kubectl-krew install tree
 	)
-
-	kubectl krew install tree
-
 }
 
 function awsInstall () {

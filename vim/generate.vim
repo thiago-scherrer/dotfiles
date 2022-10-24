@@ -25,8 +25,6 @@ Plug 'tpope/vim-rhubarb' " required by fugitive to :Gbrowse
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/CSApprox'
-"Plug 'xolox/vim-misc'
-"Plug 'xolox/vim-session'
 Plug 'morhetz/gruvbox'
 
 "*****************************************************************************
