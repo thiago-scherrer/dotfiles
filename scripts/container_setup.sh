@@ -43,10 +43,10 @@ function basicSetup () {
 }
 
 function vimSetup () {
-    init
+	init
 
-     git clone https://github.com/vim/vim
-     cd vim
+	git clone https://github.com/vim/vim
+	cd vim
     ./configure \
 		--disable-netbeans \
         --enable-multibyte \
@@ -63,16 +63,15 @@ function vimSetup () {
     curl -sfLo ~/.vim/autoload/plug.vim --create-dirs \
       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-    go install golang.org/x/tools/gopls@latest
-
-    /usr/local/bin/vim +':silent :PlugInstall --sync' +qa
+    vim +':silent :PlugInstall --sync' +qa
 
     mkdir -p /${USER}/tmp/
 
+    go install golang.org/x/tools/gopls@latest
 
     mkdir -p /${USER}/.config/coc
 
-    /usr/local/bin/vim +':silent :CocInstall -sync coc-jedi coc-json coc-html coc-css coc-docker coc-go coc-htmlcoc-json coc-pyright coc-sh coc-solargraph coc-sql coc-tsserver --sync' +qa
+    vim +':silent :CocInstall -sync coc-jedi coc-json coc-html coc-css coc-docker coc-go coc-htmlcoc-json coc-pyright coc-sh coc-solargraph coc-sql coc-tsserver --sync' +qa
 
     cat /opt/vim_post_install >> /${USER}/.vimrc
     rm /opt/vim_post_install
@@ -87,7 +86,7 @@ function terraformSetup () {
 function pythonSetup () {
 	init
 
-    git clone https://github.com/pyenv/pyenv.git /${USER}/.pyenv
+	git clone https://github.com/pyenv/pyenv.git /${USER}/.pyenv
     cd /${USER}/.pyenv
     src/configure
     make -C src
@@ -116,8 +115,6 @@ function gcloudSetup () {
 	&& /usr/local/gcloud/google-cloud-sdk/install.sh \
 	&& /usr/local/gcloud/google-cloud-sdk/bin/gcloud --quiet components install gke-gcloud-auth-plugin kubectl alpha beta \
 	&& pip3 install grpcio
-
-	ln -s /usr/local/gcloud/google-cloud-sdk/bin/kubectl /bin/kubectl
 }
 
 function k8s () {
@@ -125,6 +122,8 @@ function k8s () {
 	curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
 
 	helm plugin install https://github.com/quintush/helm-unittest
+
+	ln -s /usr/local/gcloud/google-cloud-sdk/bin/kubectl /bin/kubectl
 
 	git clone https://github.com/derailed/k9s.git \
 	&& cd k9s && go install && cd .. && rm -rfv k9s
@@ -166,10 +165,10 @@ function awsInstall () {
 }
 
 basicSetup
+vimSetup
 terraformSetup
 pythonSetup
 ohMyZshSetup
 gcloudSetup
 k8s
 awsInstall
-vimSetup
