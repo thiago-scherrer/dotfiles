@@ -45,7 +45,7 @@ function basicSetup () {
 function vimSetup () {
 	init
 
-	git clone https://github.com/vim/vim -b v9.0.0804
+	git clone https://github.com/vim/vim 
 	cd vim
     ./configure \
 		--disable-netbeans \
@@ -151,7 +151,7 @@ function k8s () {
 	  tar zxvf "${KREW}.tar.gz" &&
 	  ./"${KREW}" install krew
 	)
-	~/.krew/bin/kubectl-krew install tree
+	~/.krew/bin/kubectl-krew install tree get-all
 }
 
 function awsInstall () {
