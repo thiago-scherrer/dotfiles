@@ -320,7 +320,7 @@ else
 endif
 
 " terminal
-nnoremap <F2> :zsh<cr>
+nnoremap <F2> :sh<cr>
 
 let g:terraform_align = 1
 let g:terraform_fmt_on_save = 1
