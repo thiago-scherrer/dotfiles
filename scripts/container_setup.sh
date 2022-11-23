@@ -29,8 +29,10 @@ function basicSetup () {
 		ncurses-dev \
 		nodejs \
 		npm \
+		nmap \
 		openssh-client \
 		py3-pip \
+		python3-dev \
 		ripgrep \
 		ruby \
 		ruby-dev \
@@ -45,7 +47,7 @@ function basicSetup () {
 function vimSetup () {
 	init
 
-	git clone https://github.com/vim/vim 
+	git clone https://github.com/vim/vim
 	cd vim
     ./configure \
 		--disable-netbeans \
@@ -58,7 +60,8 @@ function vimSetup () {
     make -j4
     make install
 
-    npm install -g dockerfile-language-server-nodejs
+    npm i -g dockerfile-language-server-nodejs
+	npm i -g graphql-language-service-cli
 
     curl -sfLo ~/.vim/autoload/plug.vim --create-dirs \
       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -71,7 +74,22 @@ function vimSetup () {
 
     mkdir -p /${USER}/.config/coc
 
-    vim +':silent :CocInstall -sync coc-jedi coc-json coc-html coc-css coc-docker coc-go coc-htmlcoc-json coc-pyright coc-sh coc-solargraph coc-sql coc-tsserver --sync' +qa
+	go install github.com/hashicorp/terraform-ls@latest
+
+    vim +':silent :CocInstall -sync \
+		coc-css \
+		coc-docker \
+		coc-go \
+		coc-html \
+		coc-htmlcoc-json \
+		coc-jedi \
+		coc-json \
+		coc-markdownlint \
+		coc-pyright \
+		coc-sh \
+		coc-sql \
+		coc-tsserver \
+		--sync' +qa
 
     cat /opt/vim_post_install >> /${USER}/.vimrc
     rm /opt/vim_post_install
@@ -81,6 +99,7 @@ function vimSetup () {
 
 function terraformSetup () {
     git clone https://github.com/tfutils/tfenv.git /${USER}/.tfenv
+	go install github.com/terraform-docs/terraform-docs@latest
 }
 
 function pythonSetup () {
@@ -151,7 +170,10 @@ function k8s () {
 	  tar zxvf "${KREW}.tar.gz" &&
 	  ./"${KREW}" install krew
 	)
+
 	~/.krew/bin/kubectl-krew install tree get-all
+
+	go install github.com/norwoodj/helm-docs/cmd/helm-docs@latest
 }
 
 function awsInstall () {

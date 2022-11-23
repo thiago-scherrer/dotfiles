@@ -5,27 +5,29 @@ let g:vim_bootstrap_frams = ""
 "*****************************************************************************
 "" Plug install packages
 "*****************************************************************************
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
 Plug 'Raimondi/delimitMate'
 Plug 'Shougo/vimproc.vim', {'do': g:make}
 Plug 'Yggdroot/indentLine'
 Plug 'dense-analysis/ale'
 Plug 'editor-bootstrap/vim-bootstrap-updater'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'hashivim/vim-terraform'
 Plug 'honza/vim-snippets'
 Plug 'mbbill/undotree'
 Plug 'mg979/vim-visual-multi'
+Plug 'morhetz/gruvbox'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/jsonc.vim'
 Plug 'nvie/vim-flake8'
 Plug 'tell-k/vim-autopep8'
 Plug 'thoughtbot/vim-rspec'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-rhubarb' " required by fugitive to :Gbrowse
+Plug 'tpope/vim-rhubarb' 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/CSApprox'
-Plug 'morhetz/gruvbox'
 
 "*****************************************************************************
 "*****************************************************************************
@@ -423,17 +425,6 @@ augroup vimrc-python
       \ formatoptions+=croq softtabstop=4
       \ cinwords=if,elif,else,for,while,try,except,finally,def,class,with
 augroup END
-
-" jedi-vim
-let g:jedi#popup_on_dot = 0
-let g:jedi#goto_assignments_command = "<leader>g"
-let g:jedi#goto_definitions_command = "<leader>d"
-let g:jedi#documentation_command = "K"
-let g:jedi#usages_command = "<leader>n"
-let g:jedi#rename_command = "<leader>r"
-let g:jedi#show_call_signatures = "0"
-let g:jedi#completions_command = "<C-Space>"
-let g:jedi#smart_auto_mappings = 0
 
 " ale
 :call extend(g:ale_linters, {
