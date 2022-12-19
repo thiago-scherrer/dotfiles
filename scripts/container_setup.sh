@@ -49,16 +49,20 @@ function vimSetup () {
 
 	git clone https://github.com/vim/vim
 	cd vim
-    ./configure \
-		--disable-netbeans \
-        --enable-multibyte \
-        --enable-python3interp=yes \
-        --enable-rubyinterp=yes \
-        --with-features=huge \
-        --with-python3-config-dir=$(python3-config --configdir)
-
-    make -j4
-    make install
+        ./configure --with-features=huge \
+            --enable-multibyte \
+            --enable-rubyinterp \
+            --enable-python3interp \
+            --with-python3-config-dir=$(python3-config --configdir) \
+            --enable-perlinterp \
+            --enable-luainterp \
+            --enable-cscope \
+            --enable-gui=auto \
+            --enable-gtk2-check \
+            --with-compiledby="j.jith"
+   	make -j8
+	#make test -j8
+    	make install
 
     npm i -g dockerfile-language-server-nodejs
 	npm i -g graphql-language-service-cli

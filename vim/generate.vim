@@ -124,8 +124,6 @@ if exists("*fugitive#statusline")
   set statusline+=%{fugitive#statusline()}
 endif
 
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
-
 " vim-airline
 let g:airline_theme = 'gruvbox'
 let g:airline#extensions#branch#enabled = 1
@@ -237,7 +235,6 @@ autocmd BufEnter *.go nmap <space>ii  <Plug>(go-implements)
 autocmd BufEnter *.go nmap <space>ci  <Plug>(go-describe)
 autocmd BufEnter *.go nmap <space>cc  <Plug>(go-callers)
 nmap <C-a> <C-o>
-nmap <C-d> <Plug>(coc-definition)
 
 autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4 softtabstop=4
 
@@ -326,30 +323,6 @@ let g:terraform_align = 1
 let g:terraform_fmt_on_save = 1
 let g:terraform_fold_sections = 0
 
-inoremap <silent><expr> <c-@> coc#refresh()
-
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
-                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  elseif (coc#rpc#ready())
-    call CocActionAsync('doHover')
-  else
-    execute '!' . &keywordprg . " " . expand('<cword>')
-  endif
-endfunction
-
-autocmd CursorHold * silent call CocActionAsync('highlight')
-
-augroup mygroup
-  autocmd!
-  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
-  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
-augroup end
-
 nnoremap <CR> :noh <CR><CR>
 
 " Terraform template
@@ -383,17 +356,7 @@ nnoremap  <silent>   <tab>  :if &modifiable && !&readonly && &modified <CR> :wri
 nnoremap  <silent> <s-tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bprevious<CR>
 
 " Use K to show documentation in preview window.
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  elseif (coc#rpc#ready())
-    call CocActionAsync('doHover')
-  else
-    execute '!' . &keywordprg . " " . expand('<cword>')
-  endif
-endfunction
+" nnoremap <silent> K :call <SID>show_documentation()<CR>
 
 set background=dark
 highlight Normal ctermbg=None
@@ -403,4 +366,3 @@ highlight clear CursorLineNr
 set signcolumn=yes
 highlight ALEErrorSign ctermfg=red
 highlight ALEWarningSign ctermfg=red
-

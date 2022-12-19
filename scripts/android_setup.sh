@@ -14,27 +14,6 @@ function basicSetup () {
 	&& npm install --global yar
 }
 
-function vimSetup () {
-	mkdir ~/.tmp/
-
-    npm install -g dockerfile-language-server-nodejs
-
-    curl -sfLo ~/.vim/autoload/plug.vim --create-dirs \
-		https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-	cp vim/generate_android.vim ~/.vimrc
-
-    vim +':silent :PlugInstall --sync' +qa
-
-    go install golang.org/x/tools/gopls@latest
-
-    mkdir -p ~/.config/coc
-
-    vim +':silent :CocInstall -sync coc-jedi coc-json coc-html coc-css coc-docker coc-go coc-htmlcoc-json coc-pyright coc-sh coc-solargraph coc-sql coc-tsserver coc-yaml --sync' +qa
-
-	cp vim/coc-settings.json ~/.vim
-}
-
 function terraformSetup () {
     git clone https://github.com/tfutils/tfenv.git ~/.tfenv
 }
@@ -64,7 +43,6 @@ function ohMyZshSetup () {
 }
 
 basicSetup
-vimSetup
 terraformSetup
 pythonSetup
 ohMyZshSetup
