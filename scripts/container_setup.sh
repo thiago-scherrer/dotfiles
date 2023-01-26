@@ -20,7 +20,6 @@ function basicSetup () {
 		gpg-agent \
 		gcc \
 		git \
-		github-cli \
 		go \
 		jq \
 		make \
@@ -42,6 +41,10 @@ function basicSetup () {
 		zip
 
 	npm install --global yar
+
+	git clone https://github.com/cli/cli \
+	&& cd cli \ 
+	&& make install
 }
 
 function vimSetup () {
