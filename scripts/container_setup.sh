@@ -42,9 +42,7 @@ function basicSetup () {
 
 	npm install --global yar
 
-	git clone https://github.com/cli/cli \
-	&& cd cli \ 
-	&& make install
+	git clone https://github.com/cli/cli && cd cli && make install
 }
 
 function vimSetup () {
