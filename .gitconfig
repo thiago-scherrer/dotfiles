@@ -1,5 +1,6 @@
 [core]
 	editor = vim
+	hooksPath = ~/workspace/projects/dotfiles/github_hooks
 [commit]
 	gpgsign = true
 [gpg]
@@ -25,3 +26,15 @@
 	dst = diff --staged
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[user]
+	name = Thiago Scherrer
+	email = eu@thiago.info
+	signingkey = 646F38A888D8F21B
+[init]
+	templateDir = ~/workspace/projects/dotfiles/github_hooks/
