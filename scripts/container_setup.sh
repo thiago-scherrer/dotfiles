@@ -30,6 +30,7 @@ function basicSetup () {
 		npm \
 		nmap \
 		openssh-client \
+		perl \
 		py3-pip \
 		python3-dev \
 		ripgrep \
