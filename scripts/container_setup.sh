@@ -31,6 +31,7 @@ function basicSetup () {
 		nmap \
 		openssh-client \
 		py3-pip \
+		perl \
 		python3-dev \
 		ripgrep \
 		ruby \
@@ -44,8 +45,6 @@ function basicSetup () {
 
 	git clone https://github.com/cli/cli && cd cli && make install
 	ln -s -f /usr/local/bin/gh /usr/bin/gh
-
-	apk add perl
 }
 
 function vimSetup () {
@@ -58,7 +57,6 @@ function vimSetup () {
             --enable-rubyinterp \
             --enable-python3interp \
             --with-python3-config-dir=$(python3-config --configdir) \
-            --enable-perlinterp \
             --enable-luainterp \
             --enable-cscope \
             --enable-gui=auto \
