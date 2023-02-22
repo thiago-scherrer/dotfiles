@@ -11,9 +11,9 @@
   tool = vimdiff
   conflictstyle = diff3
 [mergetool]
-	prompt = false
+  prompt = false
 [web]
-	browser = open
+  browser = open
 [difftool]
   prompt = 0
 [alias]
@@ -33,8 +33,8 @@
 	helper = 
 	helper = !/usr/bin/gh auth git-credential
 [user]
-	name = Thiago Scherrer
+	name = Thiago Leoncio Scherrer
 	email = eu@thiago.info
-	signingkey = 646F38A888D8F21B
+	signingkey = 6952096DABF9F138
 [init]
 	templateDir = ~/workspace/projects/dotfiles/github_hooks/

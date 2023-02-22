@@ -12,7 +12,7 @@ services:
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
       - ./bin/kops_amd64:/bin/kops
-      - /home/tscherrer/.gitconfig:/root/.gitconfig
+      - ~/projects/dotfiles/.gitconfig:/root/.gitconfig
 
       - type: bind
         source: ${HOME}
