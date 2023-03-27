@@ -1,6 +1,6 @@
 [core]
 	editor = vim
-	hooksPath = ~/workspace/projects/dotfiles/github_hooks
+    hooksPath = ~/workspace/projects/dotfiles/github_hooks
 [commit]
 	gpgsign = true
 [gpg]
@@ -37,4 +37,4 @@
 	email = eu@thiago.info
 	signingkey = 6952096DABF9F138
 [init]
-	templateDir = ~/workspace/projects/dotfiles/github_hooks/
+    templateDir = ~/workspace/projects/dotfiles/github_hooks/
