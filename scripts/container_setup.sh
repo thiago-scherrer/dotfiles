@@ -75,6 +75,7 @@ function vimSetup () {
     vim +':silent :PlugInstall --sync' +qa
 
     mkdir -p /${USER}/tmp/
+    mkdir -p /${USER}/.vim/sessions/
 
     go install golang.org/x/tools/gopls@latest
 
