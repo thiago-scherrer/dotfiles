@@ -45,6 +45,8 @@ function basicSetup () {
 
 	git clone https://github.com/cli/cli && cd cli && make install
 	ln -s -f /usr/local/bin/gh /usr/bin/gh
+
+	go install github.com/xo/usql@master
 }
 
 function vimSetup () {
@@ -63,8 +65,7 @@ function vimSetup () {
             --enable-gtk2-check \
             --with-compiledby="j.jith"
    	make -j8
-	#make test -j8
-    	make install
+    make install
 
     npm i -g dockerfile-language-server-nodejs
 	npm i -g graphql-language-service-cli
