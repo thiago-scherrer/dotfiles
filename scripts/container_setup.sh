@@ -29,6 +29,7 @@ function basicSetup () {
 		nodejs \
 		npm \
 		nmap \
+		openssl \
 		openssh-client \
 		py3-pip \
 		perl \
@@ -47,6 +48,7 @@ function basicSetup () {
 	ln -s -f /usr/local/bin/gh /usr/bin/gh
 
 	go install github.com/xo/usql@master
+
 }
 
 function vimSetup () {
@@ -65,10 +67,10 @@ function vimSetup () {
             --enable-gtk2-check \
             --with-compiledby="j.jith"
    	make -j8
-    make install
+    	make install
 
     npm i -g dockerfile-language-server-nodejs
-	npm i -g graphql-language-service-cli
+    npm i -g graphql-language-service-cli
 
     curl -sfLo ~/.vim/autoload/plug.vim --create-dirs \
       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -78,11 +80,7 @@ function vimSetup () {
     mkdir -p /${USER}/tmp/
     mkdir -p /${USER}/.vim/sessions/
 
-    go install golang.org/x/tools/gopls@latest
-
     mkdir -p /${USER}/.config/coc
-
-	go install github.com/hashicorp/terraform-ls@latest
 
     vim +':silent :CocInstall -sync \
 		coc-css \
@@ -103,11 +101,15 @@ function vimSetup () {
     rm /opt/vim_post_install
 
     ln -s /usr/local/bin/vim /usr/bin/vim
+
+    go install github.com/hashicorp/terraform-ls@latest
+    go install golang.org/x/tools/gopls@latest
 }
 
 function terraformSetup () {
     git clone https://github.com/tfutils/tfenv.git /${USER}/.tfenv
 	go install github.com/terraform-docs/terraform-docs@latest
+
 }
 
 function pythonSetup () {
@@ -119,8 +121,8 @@ function pythonSetup () {
     make -C src
     git clone https://github.com/pyenv/pyenv-virtualenv.git \
 		/${USER}/.pyenv/plugins/pyenv-virtualenv
-
-	pip install flake8
+		    
+    pip install flake8
 }
 
 function ohMyZshSetup () {
@@ -145,7 +147,6 @@ function gcloudSetup () {
 }
 
 function k8s () {
-	export VERIFY_CHECKSUM=false
 	curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
 
 	helm plugin install https://github.com/quintush/helm-unittest
@@ -162,26 +163,6 @@ function k8s () {
 	&& chmod -R 755 ~/.oh-my-zsh/completions \
 	&& ln -s /opt/kubectx/completion/_kubectx.zsh ~/.oh-my-zsh/completions/_kubectx.zsh \
 	&& ln -s /opt/kubectx/completion/_kubens.zsh ~/.oh-my-zsh/completions/_kubens.zsh
-
-	export istio_version=1.14.1
-
-	wget https://github.com/istio/istio/releases/download/${istio_version}/istioctl-${istio_version}-linux-amd64.tar.gz  \
-	&& tar -C /bin/ -xvf istioctl-${istio_version}-linux-amd64.tar.gz \
-	&& rm -f istioctl-${istio_version}-linux-amd64.tar.gz
-
-	(
-	  set -x; cd "$(mktemp -d)" &&
-	  OS="$(uname | tr '[:upper:]' '[:lower:]')" &&
-	  ARCH="$(uname -m | sed -e 's/x86_64/amd64/' -e 's/\(arm\)\(64\)\?.*/\1\2/' -e 's/aarch64$/arm64/')" &&
-	  KREW="krew-${OS}_${ARCH}" &&
-	  curl -fsSLO "https://github.com/kubernetes-sigs/krew/releases/latest/download/${KREW}.tar.gz" &&
-	  tar zxvf "${KREW}.tar.gz" &&
-	  ./"${KREW}" install krew
-	)
-
-	~/.krew/bin/kubectl-krew install tree get-all
-
-	go install github.com/norwoodj/helm-docs/cmd/helm-docs@latest
 }
 
 function awsInstall () {
@@ -194,11 +175,26 @@ function awsInstall () {
 	&& rm awscliv2.zip
 }
 
-basicSetup
-vimSetup
-terraformSetup
-pythonSetup
-ohMyZshSetup
-gcloudSetup
-k8s
-awsInstall
+echo '#### basicSetup start ####'
+basicSetup > /dev/null 2>&1
+
+echo '#### vimSetup start ####'
+vimSetup > /dev/null 2>&1
+
+echo '#### terraformSetup start ####'
+terraformSetup > /dev/null 2>&1
+
+echo '#### pythonSetup start ####'
+pythonSetup > /dev/null 2>&1
+
+echo '#### ohMyZshSetup start ####'
+ohMyZshSetup > /dev/null 2>&1
+
+echo '#### gcloudSetup start ####'
+gcloudSetup > /dev/null 2>&1
+
+echo '#### k8s start ####'
+k8s > /dev/null 2>&1
+
+echo '#### awsInstall start ####'
+awsInstall > /dev/null 2>&1
