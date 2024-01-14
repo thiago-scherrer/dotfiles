@@ -91,6 +91,6 @@ function pythonSetup(){
 }
 
 systemUpdate
-#zshSetup
-#tfSetup
-#pythonSetup
+zshSetup
+tfSetup
+pythonSetup
