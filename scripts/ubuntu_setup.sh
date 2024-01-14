@@ -2,7 +2,7 @@
 
 function systemUpdate () {
 	sudo apt update \
-		&& apt install -y \
+		&& sudo apt install -y \
 			build-essential \
 		cmake \
 		curl \
@@ -39,7 +39,6 @@ function systemUpdate () {
 		libsdl2-dev \
 		libtbb-dev \
 		libudev-dev \
-		libwxgtk3.0-gtk3-dev \
 		libz-dev libpng-dev \
 		lm-sensors \
 		nasm \
@@ -58,7 +57,6 @@ function systemUpdate () {
 		zlib1g-dev \
 		zsh \
 	    terminator \
-	    ruby2.7 \
 	    ruby-dev \
 	    yubioath-desktop \
 		hsetroot
@@ -69,7 +67,7 @@ function systemUpdate () {
 
 function zshSetup () {
 	sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-	cp zsh/.zshrc ~/
+	cp zsh/zshrc ~/.zshrc
 
   git clone https://github.com/zsh-users/zsh-syntax-highlighting.git \
     ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
@@ -93,6 +91,6 @@ function pythonSetup(){
 }
 
 systemUpdate
-zshSetup
-tfSetup
-pythonSetup
+#zshSetup
+#tfSetup
+#pythonSetup
